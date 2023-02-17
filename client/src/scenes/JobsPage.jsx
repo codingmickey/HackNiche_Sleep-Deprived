@@ -6,6 +6,7 @@ import MyPostWidget from 'scenes/widgets/MyPostWidget';
 import PostsWidget from 'scenes/widgets/PostsWidget';
 import AdvertWidget from 'scenes/widgets/AdvertWidget';
 import FriendListWidget from 'scenes/widgets/FriendListWidget';
+import JobPostsWidget from './widgets/JobPostsWidget';
 
 const JobsPage = () => {
   const isNonMobileScreens = useMediaQuery('(min-width:1000px)');
@@ -26,7 +27,7 @@ const JobsPage = () => {
         </Box>
         <Box flexBasis={isNonMobileScreens ? '42%' : undefined} mt={isNonMobileScreens ? undefined : '2rem'}>
           {/* <MyPostWidget picturePath={picturePath} /> */}
-          <PostsWidget userId={_id} />
+          <JobPostsWidget userId={_id} />
         </Box>
         {/* {isNonMobileScreens && (
           <Box flexBasis="26%">
