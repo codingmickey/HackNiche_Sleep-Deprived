@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Navbar1 from 'scenes/navbar/Navbar1';
+import Navbar1 from '../navbar/Navbar1';
 
 export const Transition = () => {
   const [step, setStep] = useState(1);
@@ -26,7 +26,7 @@ export const Transition = () => {
           paddingBottom: '40px',
           display: 'flex',
           justifyContent: 'space-around',
-          alignContent: 'flex-start',
+          alignContent: 'flex-start'
         }}
       >
         <div>
@@ -38,12 +38,11 @@ export const Transition = () => {
               margin: '0',
               color: 'white',
               maxWidth: '600px',
-              fontSize: '1.25em',
+              fontSize: '1.25em'
             }}
           >
-            Prior to leaving the military, a service member should create a plan
-            for their transition to civilian life. This includes thinking about
-            career options, education, housing, and financial stability.
+            Prior to leaving the military, a service member should create a plan for their transition to civilian life.
+            This includes thinking about career options, education, housing, and financial stability.
           </h3>
         </div>
         <div>
@@ -62,9 +61,7 @@ export const Transition = () => {
           <a href="#step1">
             <div
               className={`${
-                step == 1
-                  ? 'font-semibold underline underline-offset-[0.44rem] text-orange'
-                  : 'font-normal'
+                step == 1 ? 'font-semibold underline underline-offset-[0.44rem] text-orange' : 'font-normal'
               } cursor-pointer `}
               onClick={() => setStep(1)}
             >
@@ -74,9 +71,7 @@ export const Transition = () => {
           <a href="#step2">
             <div
               className={`${
-                step == 2
-                  ? 'font-semibold underline underline-offset-[0.44rem] text-orange'
-                  : 'font-normal'
+                step == 2 ? 'font-semibold underline underline-offset-[0.44rem] text-orange' : 'font-normal'
               } cursor-pointer `}
               onClick={() => setStep(2)}
             >
@@ -86,9 +81,7 @@ export const Transition = () => {
           <a href="#step3">
             <div
               className={`${
-                step == 3
-                  ? 'font-semibold underline underline-offset-[0.44rem] text-orange'
-                  : 'font-normal'
+                step == 3 ? 'font-semibold underline underline-offset-[0.44rem] text-orange' : 'font-normal'
               } cursor-pointer `}
               onClick={() => setStep(3)}
             >
@@ -98,9 +91,7 @@ export const Transition = () => {
           <a href="#step4">
             <div
               className={`${
-                step == 4
-                  ? 'font-semibold underline underline-offset-[0.44rem] text-orange'
-                  : 'font-normal'
+                step == 4 ? 'font-semibold underline underline-offset-[0.44rem] text-orange' : 'font-normal'
               } cursor-pointer `}
               onClick={() => setStep(4)}
             >
@@ -112,20 +103,16 @@ export const Transition = () => {
           <div className="text-lg mt-10 leading-relaxed" id="step1">
             <div className="text- tracking-widest">Job search:</div>
             <div className="">
-              A significant aspect of transitioning from military to civilian
-              life is finding a job. Veterans may have access to job placement
-              services and resources through government agencies or veteran
-              service organizations. It is important for the veteran to update
-              their resume, network with potential employers and prepare for job
-              interviews.
+              A significant aspect of transitioning from military to civilian life is finding a job. Veterans may have
+              access to job placement services and resources through government agencies or veteran service
+              organizations. It is important for the veteran to update their resume, network with potential employers
+              and prepare for job interviews.
             </div>
             <div className="">
-              Veterans have many skills and experiences that can be highly
-              valuable in the civilian job market. However, it may take time and
-              effort to find the right job. They can network with other
-              veterans, attend job fairs, and work with recruiters or job
-              placement services to increase their chances of finding a job that
-              matches their skills and interests.
+              Veterans have many skills and experiences that can be highly valuable in the civilian job market. However,
+              it may take time and effort to find the right job. They can network with other veterans, attend job fairs,
+              and work with recruiters or job placement services to increase their chances of finding a job that matches
+              their skills and interests.
             </div>
           </div>
         )}
@@ -133,58 +120,44 @@ export const Transition = () => {
           <div className="mt-10 text-lg leading-relaxed" id="step2">
             <div className="text- tracking-widest">Dealing with emotions:</div>
             <div className="">
-              The transition from military to civilian life can be an emotional
-              experience. Some veterans may experience anxiety, depression or
-              post-traumatic stress disorder (PTSD) during this time. Seeking
-              support from mental health professionals or peer support groups
-              can be helpful.
+              The transition from military to civilian life can be an emotional experience. Some veterans may experience
+              anxiety, depression or post-traumatic stress disorder (PTSD) during this time. Seeking support from mental
+              health professionals or peer support groups can be helpful.
             </div>
             <div className="">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
-              posuere leo at nunc tristique egestas. Mauris eu pharetra sem.
-              Aliquam faucibus venenatis velit, eget aliquam purus feugiat eget.
-              Donec non massa vel lorem laoreet consequat egestas eu lectus.
-              Vestibulum
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla posuere leo at nunc tristique egestas.
+              Mauris eu pharetra sem. Aliquam faucibus venenatis velit, eget aliquam purus feugiat eget. Donec non massa
+              vel lorem laoreet consequat egestas eu lectus. Vestibulum
             </div>
           </div>
         )}
         {step == 3 && (
           <div className="mt-10 text-lg leading-relaxed" id="step3">
-            <div className="text- tracking-widest">
-              Reconnecting with family and friends:
+            <div className="text- tracking-widest">Reconnecting with family and friends:</div>
+            <div className="">
+              Service members often spend long periods of time away from their families and friends. The transition to
+              civilian life provides an opportunity to reconnect and strengthen these relationships.
             </div>
             <div className="">
-              Service members often spend long periods of time away from their
-              families and friends. The transition to civilian life provides an
-              opportunity to reconnect and strengthen these relationships.
-            </div>
-            <div className="">
-              Military service can take a toll on personal relationships. During
-              the transition to civilian life, veterans should take the
-              opportunity to reconnect with family and friends, who can provide
-              a source of emotional support and stability.
+              Military service can take a toll on personal relationships. During the transition to civilian life,
+              veterans should take the opportunity to reconnect with family and friends, who can provide a source of
+              emotional support and stability.
             </div>
           </div>
         )}
         {step == 4 && (
           <div className="mt-10 text-lg leading-relaxed" id="step4">
-            <div className="text- tracking-widest">
-              Adjusting to civilian culture:
-            </div>
+            <div className="text- tracking-widest">Adjusting to civilian culture:</div>
             <div className="">
-              After spending years in a structured military environment, it can
-              be challenging to adapt to the less regimented civilian world.
-              Veterans may find it helpful to connect with other veterans or
-              join a community organization to help them adjust.
+              After spending years in a structured military environment, it can be challenging to adapt to the less
+              regimented civilian world. Veterans may find it helpful to connect with other veterans or join a community
+              organization to help them adjust.
             </div>
-            <div className="text- tracking-widest mt-4">
-              Navigating benefits and resources:
-            </div>
+            <div className="text- tracking-widest mt-4">Navigating benefits and resources:</div>
             <div className="">
-              Veterans may be eligible for a range of benefits, including
-              education assistance, healthcare, and disability compensation. It
-              is important to explore the resources and benefits available to
-              them and to learn how to navigate the system.
+              Veterans may be eligible for a range of benefits, including education assistance, healthcare, and
+              disability compensation. It is important to explore the resources and benefits available to them and to
+              learn how to navigate the system.
             </div>
           </div>
         )}

@@ -24,7 +24,7 @@ import { useSelector } from 'react-redux';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import FilterAltIcon from '@mui/icons-material/FilterAlt';
-import { jobsCategory } from 'data/jobCategory';
+import { jobsCategory } from '../../data/jobCategory';
 import { jobLocation } from '../../data/jobLocation';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 

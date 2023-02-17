@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import Navbar1 from 'scenes/navbar/Navbar1';
+import Navbar1 from '../navbar/Navbar1';
 
 export const Employer = () => {
   const [step, setStep] = useState(1);
@@ -8,7 +8,7 @@ export const Employer = () => {
     window.scroll({
       top: 0,
       left: 0,
-      behavior: 'smooth',
+      behavior: 'smooth'
     });
   }, []);
   return (
@@ -17,9 +17,7 @@ export const Employer = () => {
       {step == 1 && (
         <>
           {' '}
-          <div className="text-center text-4xl font-medium mt-24">
-            Organization Details
-          </div>
+          <div className="text-center text-4xl font-medium mt-24">Organization Details</div>
           <div className="mx-auto border-[0.09rem] border-gray-300 bg-white rounded-md py-5 px-10 w-[50%] text-lg mt-10">
             <div className="">Organization name</div>
             <input
@@ -34,20 +32,14 @@ export const Employer = () => {
               placeholder="Enter description here"
             />
             <div className="mt-5">Organization logo (Recommended)</div>
-            <input
-              type="file"
-              className="placeholder:text-[1.0rem] bg-gray-100 outline-none py-1 px-4 mt-2 w-full"
-            />
+            <input type="file" className="placeholder:text-[1.0rem] bg-gray-100 outline-none py-1 px-4 mt-2 w-full" />
 
             <div className=""></div>
           </div>
-          <div className="text-center text-4xl font-medium mt-24">
-            Organization verification
-          </div>
+          <div className="text-center text-4xl font-medium mt-24">Organization verification</div>
           <div className="mx-auto border-[0.09rem] border-gray-300 bg-white rounded-md py-5 px-10 w-[50%] text-lg mt-10">
             <div className="text-base">
-              Using any one of the options below, get your organization verified
-              and start posting internships/jobs
+              Using any one of the options below, get your organization verified and start posting internships/jobs
             </div>
             <div className="mt-5">
               <input
@@ -83,8 +75,8 @@ export const Employer = () => {
               </label>
             </div>
             <div className="ml-7 text-sm text-gray-500">
-              Connect your most active social media profile of which you are an
-              admin with minimum 900-1100 likes/followers
+              Connect your most active social media profile of which you are an admin with minimum 900-1100
+              likes/followers
             </div>
             <div className="ml-7 mt-4">
               <div className="text-sm">Enter Link URL</div>
@@ -106,15 +98,11 @@ export const Employer = () => {
               </label>
             </div>
             <div className="ml-7 text-sm text-gray-500">
-              Verify using Corporate Identification Number (CIN) or any govt.
-              issued business registration document
+              Verify using Corporate Identification Number (CIN) or any govt. issued business registration document
             </div>
             <div className="ml-7 mt-4">
               <div className="text-sm">Enter documents</div>
-              <input
-                type="file"
-                className="placeholder:text-[1.0rem] bg-gray-100 outline-none py-1 px-4 mt-2 w-full"
-              />
+              <input type="file" className="placeholder:text-[1.0rem] bg-gray-100 outline-none py-1 px-4 mt-2 w-full" />
             </div>
           </div>
           <div className="mt-5 flex justify-center">
@@ -132,9 +120,7 @@ export const Employer = () => {
       {step == 2 && (
         <>
           <div id="post-job">
-            <div className="text-center text-4xl font-medium mt-24">
-              Post internship/job
-            </div>
+            <div className="text-center text-4xl font-medium mt-24">Post internship/job</div>
             <div className="mx-auto border-[0.09rem] border-gray-300 bg-white rounded-md py-5 px-10 w-[50%] text-lg mt-10">
               <div className="">Opportunity type</div>
               <div className="flex items-center mt-3">

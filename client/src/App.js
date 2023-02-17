@@ -41,7 +41,6 @@ function App() {
             <Route path="/map" element={<House />} />
             <Route path="/transition" element={<Transition />} />
             <Route path="/donation" element={<Donation />} />
-
             <Route path="/pension" element={<Pension />} />
             <Route path="/mental-health" element={<Mental />} />
             <Route path="/ptsd" element={<Trauma />} />

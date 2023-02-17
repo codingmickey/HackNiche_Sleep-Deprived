@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Map } from '../../components/Map/Map';
-import Navbar1 from 'scenes/navbar/Navbar1';
+import Navbar1 from '../navbar/Navbar1';
 import houseImg from './house.svg';
 import { FormControl, InputLabel, MenuItem, Select } from '@mui/material';
 import Leaflet from 'leaflet';
@@ -15,7 +15,7 @@ delete Leaflet.Icon.Default.prototype._getIconUrl;
 Leaflet.Icon.Default.mergeOptions({
   iconRetinaUrl: require('leaflet/dist/images/marker-icon-2x.png'),
   iconUrl: require('leaflet/dist/images/marker-icon.png'),
-  shadowUrl: require('leaflet/dist/images/marker-shadow.png'),
+  shadowUrl: require('leaflet/dist/images/marker-shadow.png')
 });
 const House = () => {
   const navigate = useNavigate();
@@ -26,68 +26,66 @@ const House = () => {
       description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla posuere leo at nunc tristique egestas',
       img: 'h1.jpeg',
-      pos: [19.237188, 72.844139],
+      pos: [19.237188, 72.844139]
     },
     {
       city: 'Kandivali',
       img: 'h2.jpeg',
       description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla posuere leo at nunc tristique egestas',
-      pos: [19.199821, 72.84259],
+      pos: [19.199821, 72.84259]
     },
     {
       city: 'Malad',
       img: 'h3.jpeg',
       description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla posuere leo at nunc tristique egestas',
-      pos: [19.17709, 72.843239],
+      pos: [19.17709, 72.843239]
     },
     {
       img: 'h4.jpeg',
       description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla posuere leo at nunc tristique egestas',
-      pos: [28.614454, 77.22689],
+      pos: [28.614454, 77.22689]
     },
     {
       img: 'h5.jpeg',
       pos: [28.603362, 77.190955],
       description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla posuere leo at nunc tristique egestas',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla posuere leo at nunc tristique egestas'
     },
     {
       img: 'h6.jpeg',
       pos: [28.660617, 77.21466],
       description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla posuere leo at nunc tristique egestas',
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla posuere leo at nunc tristique egestas'
     },
     {
       img: 'h6.jpeg',
       pos: [22.258652, 71.192383],
       description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla posuere leo at nunc tristique egestas',
-    },
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla posuere leo at nunc tristique egestas'
+    }
   ];
   const City = [
     {
       city: 'Mumbai',
-      pos: [19.237188, 72.844139],
+      pos: [19.237188, 72.844139]
     },
     {
       city: 'New Delhi',
-      pos: [28.613939, 77.209023],
+      pos: [28.613939, 77.209023]
     },
     {
       city: 'Gujarat',
-      pos: [22.258652, 71.192383],
-    },
+      pos: [22.258652, 71.192383]
+    }
   ];
 
   const [details, setDetails] = useState({});
   const [view, setView] = useState(false);
   const [city, setCity] = useState(localStorage.getItem('city'));
-  const [center, setCenter] = useState(
-    City.find((item) => item.city == city).pos
-  );
+  const [center, setCenter] = useState(City.find((item) => item.city == city).pos);
 
   const handleChange = (e) => {
     // setCity(e.target.value);
@@ -111,7 +109,7 @@ const House = () => {
           paddingBottom: '40px',
           display: 'flex',
           justifyContent: 'space-around',
-          alignContent: 'flex-start',
+          alignContent: 'flex-start'
         }}
       >
         <div>
@@ -123,22 +121,15 @@ const House = () => {
               marginTop: '20px',
               color: 'white',
               maxWidth: '600px',
-              fontSize: '1.25em',
+              fontSize: '1.25em'
             }}
           >
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
-            posuere leo at nunc tristique egestas. Mauris eu pharetra sem.
-            Aliquam faucibus venenatis velit, eget aliquam purus feugiat eget.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla posuere leo at nunc tristique egestas. Mauris
+            eu pharetra sem. Aliquam faucibus venenatis velit, eget aliquam purus feugiat eget.
           </h3>
         </div>
         <div>
-          <img
-            src={houseImg}
-            height="300px"
-            width="300px"
-            alt=""
-            style={{ marginLeft: '20px', marginTop: '50px' }}
-          />
+          <img src={houseImg} height="300px" width="300px" alt="" style={{ marginLeft: '20px', marginTop: '50px' }} />
         </div>
       </div>
       <div className="mx-auto mt-32 w-[65%]">
@@ -202,10 +193,7 @@ const House = () => {
             <div className="grid cols-2 gap-20">
               <div className=""></div>
               <div className="">
-                <img
-                  src={require(`../../../public/assets/${details.img}`)}
-                  className=""
-                />
+                <img src={require(`../../../public/assets/${details.img}`)} className="" />
               </div>
             </div>
           </div>
