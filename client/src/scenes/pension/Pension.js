@@ -2,6 +2,9 @@ import { Button, Typography } from "@mui/material";
 import React, { useState } from "react";
 import TextField from "@mui/material/TextField";
 import Autocomplete from "@mui/material/Autocomplete";
+import Paper from "@mui/material/Paper";
+
+import img from "../pension/pension.svg";
 import "./Pension.css";
 export const Pension = () => {
 	const posts = [
@@ -26,7 +29,7 @@ export const Pension = () => {
 		setTen(false);
 		if (years < 10) {
 			setTen(true);
-		} else if (years > 10 && years < 20) {
+		} else if (years >= 10 && years <= 20) {
 			setgreatTen(true);
 			setPension((num / 2) * (years / 20));
 			console.log(pension);
@@ -44,19 +47,41 @@ export const Pension = () => {
 		<div>
 			<div
 				style={{
-					height: "40vh",
+					height: "50vh",
 					width: "100%",
 					backgroundColor: "#F3963B",
 					margin: "0",
 					padding: "20px",
+					display: "flex",
+					justifyContent: "space-around",
+					alignContent: "flex-start",
 				}}
 			>
-				<h1 style={{ color: "white", fontSize: "5em", margin: "0" }}>
-					<p style={{ margin: "0" }}>
-						Pension <br></br> Calculator{" "}
-					</p>
-				</h1>
+				<div>
+					<h1
+						style={{
+							color: "white",
+							fontSize: "5em",
+							margin: "0",
+							paddingTop: "30px",
+						}}
+					>
+						<p style={{ margin: "0" }}>
+							Pension <br></br> Calculator{" "}
+						</p>
+					</h1>
+				</div>
+				<div>
+					<img
+						src={img}
+						height="300px"
+						width="300px"
+						alt=""
+						style={{ marginLeft: "50px" }}
+					/>
+				</div>
 			</div>
+
 			<div style={{ padding: "40px" }}>
 				<div className="pen-box">
 					<Typography sx={{ padding: "10px" }}>Post</Typography>
@@ -108,23 +133,40 @@ export const Pension = () => {
 					<Button
 						type="submit"
 						variant="contained"
-						sx={{ color: "white", backgroundColor: "black" }}
-						fullWidth
+						sx={{
+							color: "white",
+							backgroundColor: "black",
+							padding: "15px",
+							width: "50%",
+						}}
 						onClick={handleChange}
 					>
 						Submit
 					</Button>
 				</div>
-				<div className="pen-box" style={{ display: ten ? "block" : "none" }}>
+				<div
+					className="pen-box"
+					style={{
+						display: ten ? "block" : "none",
+						textAlign: "center",
+						fontSize: "2em",
+					}}
+				>
 					<p>Sorry, you're not eligible for pension scheme</p>
 				</div>
 				<div
 					className="pen-box"
-					style={{ display: greatten ? "block" : "none" }}
+					style={{
+						display: greatten ? "block" : "none",
+						justifyContent: "center",
+						textAlign: "center",
+					}}
 				>
 					<p>The pension you're eligible for is as follows</p>
 					<br></br>
-					<div>{pension}</div>
+					<div>
+						<p style={{ fontSize: "3em" }}>{pension}</p>
+					</div>
 				</div>
 			</div>
 		</div>
