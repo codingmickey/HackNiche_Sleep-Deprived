@@ -27,7 +27,7 @@ function App() {
 							element={isAuth ? <HomePage /> : <Navigate to="/" />}
 						/>
 						<Route path="/login" element={<LoginPage />} />
-            <Route path="/pension" element={<Pension />} />
+						<Route path="/pension" element={<Pension />} />
 						<Route
 							path="/profile/:userId"
 							element={isAuth ? <ProfilePage /> : <Navigate to="/" />}
