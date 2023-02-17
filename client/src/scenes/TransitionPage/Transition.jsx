@@ -58,46 +58,46 @@ export const Transition = () => {
       <div className="w-[90%] sm:w-[65%] mx-auto mt-14">
         {/* <div className="text-center text-4xl tracking-wider ">Transition</div> */}
         <nav className="sticky top-0 flex gap-32 text-xl items-center  bg-gray-100 w-full">
-          <a href="#step1">
-            <div
-              className={`${
-                step == 1 ? 'font-semibold underline underline-offset-[0.44rem] text-orange' : 'font-normal'
-              } cursor-pointer `}
-              onClick={() => setStep(1)}
-            >
-              Step 1
-            </div>
-          </a>
-          <a href="#step2">
-            <div
-              className={`${
-                step == 2 ? 'font-semibold underline underline-offset-[0.44rem] text-orange' : 'font-normal'
-              } cursor-pointer `}
-              onClick={() => setStep(2)}
-            >
-              Step 2
-            </div>
-          </a>
-          <a href="#step3">
-            <div
-              className={`${
-                step == 3 ? 'font-semibold underline underline-offset-[0.44rem] text-orange' : 'font-normal'
-              } cursor-pointer `}
-              onClick={() => setStep(3)}
-            >
-              Step 3
-            </div>
-          </a>
-          <a href="#step4">
-            <div
-              className={`${
-                step == 4 ? 'font-semibold underline underline-offset-[0.44rem] text-orange' : 'font-normal'
-              } cursor-pointer `}
-              onClick={() => setStep(4)}
-            >
-              Step 4
-            </div>
-          </a>
+          {/* <a href="#step1"> */}
+          <div
+            className={`${
+              step == 1 ? 'font-semibold underline underline-offset-[0.44rem] text-orange' : 'font-normal'
+            } cursor-pointer `}
+            onClick={() => setStep(1)}
+          >
+            Step 1
+          </div>
+          {/* </a>
+          <a href="#step2"> */}
+          <div
+            className={`${
+              step == 2 ? 'font-semibold underline underline-offset-[0.44rem] text-orange' : 'font-normal'
+            } cursor-pointer `}
+            onClick={() => setStep(2)}
+          >
+            Step 2
+          </div>
+          {/* </a>
+          <a href="#step3"> */}
+          <div
+            className={`${
+              step == 3 ? 'font-semibold underline underline-offset-[0.44rem] text-orange' : 'font-normal'
+            } cursor-pointer `}
+            onClick={() => setStep(3)}
+          >
+            Step 3
+          </div>
+          {/* </a>
+          <a href="#step4"> */}
+          <div
+            className={`${
+              step == 4 ? 'font-semibold underline underline-offset-[0.44rem] text-orange' : 'font-normal'
+            } cursor-pointer `}
+            onClick={() => setStep(4)}
+          >
+            Step 4
+          </div>
+          {/* </a> */}
         </nav>
         {step == 1 && (
           <div className="text-lg mt-10 leading-relaxed" id="step1">

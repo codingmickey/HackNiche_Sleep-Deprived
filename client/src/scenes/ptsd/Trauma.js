@@ -1,10 +1,20 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import Navbar1 from '../navbar/Navbar1';
 import img from '../ptsd/trauma.svg';
 import { Games } from './Games';
 import { Reels } from './Reels';
 export const Trauma = () => {
+  useEffect(() => {
+    window.scroll({
+      top: 0,
+      left: 0,
+      behavior: 'smooth'
+    });
+  }, []);
+
   return (
     <div>
+      <Navbar1 />
       <div
         style={{
           height: '45vh',

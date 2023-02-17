@@ -90,7 +90,7 @@ const Navbar1 = () => {
       {/* DESKTOP NAV */}
       {isNonMobileScreens ? (
         <FlexBetween gap="2rem">
-          <Link to="/">
+          <Link to="/jobs">
             <Typography variant="h5">Job</Typography>
           </Link>
           {/* <Link to="/"> */}
@@ -103,9 +103,30 @@ const Navbar1 = () => {
                 support ? 'absolute' : 'hidden'
               }`}
             >
-              <div className="font-sans cursor-pointer hover:bg-slate-50 px-2 py-1 mt-1">House Hunt</div>
-              <div className="font-sans cursor-pointer hover:bg-slate-50 px-2 py-1 mt-1">Transition</div>
-              <div className="font-sans cursor-pointer hover:bg-slate-50 px-2 py-1 mt-1 mb-1">Mental Health</div>
+              <div
+                className="font-sans cursor-pointer hover:bg-slate-50 px-2 py-1 mt-1"
+                onClick={() => navigate('/house-hunt')}
+              >
+                House Hunt
+              </div>
+              <div
+                className="font-sans cursor-pointer hover:bg-slate-50 px-2 py-1 mt-1"
+                onClick={() => navigate('/transition')}
+              >
+                Transition
+              </div>
+              <div
+                className="font-sans cursor-pointer hover:bg-slate-50 px-2 py-1 mt-1 mb-1"
+                onClick={() => navigate('/mental-health')}
+              >
+                Mental Health
+              </div>
+              <div
+                className="font-sans cursor-pointer hover:bg-slate-50 px-2 py-1 mt-1 mb-1"
+                onClick={() => navigate('/donation')}
+              >
+                Donation
+              </div>
             </div>
           </span>
           <span className="cursor-pointer relative">
@@ -118,13 +139,18 @@ const Navbar1 = () => {
               }`}
             >
               <div className="font-sans cursor-pointer hover:bg-slate-50 px-2 py-1 mt-1">Meets</div>
-              <div className="font-sans cursor-pointer hover:bg-slate-50 px-2 py-1 mt-1 mb-1">Blogs</div>
+              <div
+                className="font-sans cursor-pointer hover:bg-slate-50 px-2 py-1 mt-1 mb-1"
+                onClick={() => navigate('/blog')}
+              >
+                Blogs
+              </div>
               {/* <div className="font-sans cursor-pointer hover:bg-slate-50 px-2 py-1 mt-1 mb-1">
                 
               </div> */}
             </div>
           </span>
-          <Link to="/">
+          <Link to="/pension">
             <Typography variant="h5">Pension</Typography>
           </Link>
           {/* </Link> */}

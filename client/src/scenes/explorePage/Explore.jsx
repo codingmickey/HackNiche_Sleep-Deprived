@@ -1,7 +1,6 @@
 import ExploreCard from '../../components/ExploreCard';
 import React from 'react';
-import Navbar from '../navbar';
-import Navbar1 from '../navbar';
+import Navbar1 from '../navbar/Navbar1';
 
 export const Explore = () => {
   const data = [

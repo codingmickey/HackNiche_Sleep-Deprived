@@ -9,7 +9,7 @@ export const Donation = () => {
     <>
       <Navbar1 />
       {step == 0 && (
-        <div className="mt-32 border-[0.02rem] border-gray-300 w-[65%] mx-auto">
+        <div className="mt-32 border-[0.02rem] border-gray-300 w-[65%] mx-auto shadow-xl">
           <div className="bg-grey flex justify-between w-full px-5 py-2">
             <div className="flex">
               <div className="w-7 h-7 text-lg text-center rounded-full bg-white text-orange -pl-2">1</div>
@@ -65,7 +65,7 @@ export const Donation = () => {
             <div className="mt-4 mb-4 flex justify-end">
               <div className="">
                 <button
-                  className="px-5 py-1 bg-blue-500 hover:bg-blue-400 text-white hover:bg-blue-400 text-lg rounded-full"
+                  className="px-5 py-1 bg-blue-500 text-white hover:bg-blue-400 text-lg rounded-full"
                   onClick={() => setStep(1)}
                 >
                   Continue
@@ -113,7 +113,7 @@ export const Donation = () => {
             <div className="mt-4 mb-4 flex justify-end">
               <div className="">
                 <button
-                  className="px-5 py-1 bg-blue-500 hover:bg-blue-400 text-white hover:bg-blue-400 text-lg rounded-full"
+                  className="px-5 py-1 bg-blue-500 text-white hover:bg-blue-400 text-lg rounded-full"
                   onClick={() => setStep(2)}
                 >
                   Continue
@@ -147,7 +147,7 @@ export const Donation = () => {
             <div className="mt-4 mb-4 flex justify-center">
               <div className="">
                 <button
-                  className="px-5 py-1 bg-blue-500 hover:bg-blue-400 text-white hover:bg-blue-400 text-lg rounded-full"
+                  className="px-5 py-1 bg-blue-500 text-white hover:bg-blue-400 text-lg rounded-full"
                   onClick={() => setStep(0)}
                 >
                   Proceed to payment

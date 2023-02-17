@@ -37,23 +37,22 @@ function App() {
 
           <Routes>
             <Route path="/" element={<Landing />} />
+            <Route path="/jobs" element={<JobsPage />} />
             <Route path="/home" element={isAuth ? <HomePage /> : <Navigate to="/" />} />
             <Route path="/login" element={<LoginPage />} />
             <Route path="/profile/:userId" element={isAuth ? <ProfilePage /> : <Navigate to="/" />} />
             <Route path="/explore" element={<Explore />} />
             <Route path="/employer" element={<Employer />} />
             <Route path="/blog" element={<Blog />} />
-            <Route path="/map" element={<House />} />
+            <Route path="/house-hunt" element={<House />} />
             <Route path="/transition" element={<Transition />} />
-            <Route path="/donation" element={<Donation />} />
-            <Route path="/pension" element={<Pension />} />
             <Route path="/mental-health" element={<Mental />} />
+            <Route path="/donation" element={<Donation />} />
             <Route path="/ptsd" element={<Trauma />} />
             <Route path="/ptsd-game" element={<Mhgames />} />
             <Route path="/game1" element={<Game1 />} />
             <Route path="/game2" element={<Game2 />} />
-
-            <Route path="/profile/:userId" element={isAuth ? <ProfilePage /> : <Navigate to="/" />} />
+            <Route path="/pension" element={<Pension />} />
           </Routes>
         </ThemeProvider>
       </BrowserRouter>
