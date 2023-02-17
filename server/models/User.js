@@ -33,6 +33,20 @@ const UserSchema = new mongoose.Schema(
       type: Array,
       default: [],
     },
+    posts: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Post",
+      },
+    ],
+    role: {
+      // ARMY_MENTOR
+      // ARMY_MENTEE
+      // RECRUITER
+      // ADMIN
+      type: String
+    },
+
     location: String,
     occupation: String,
     viewedProfile: Number,
