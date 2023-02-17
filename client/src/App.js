@@ -8,6 +8,8 @@ import { CssBaseline, ThemeProvider } from '@mui/material';
 import { createTheme } from '@mui/material/styles';
 import { themeSettings } from './theme';
 import { Landing } from 'scenes/landing/Landing';
+import { Explore } from 'scenes/explorePage/Explore';
+import { Employer } from 'scenes/EmployerPage/Employer';
 
 function App() {
   const mode = useSelector((state) => state.mode);
@@ -30,6 +32,8 @@ function App() {
               path="/profile/:userId"
               element={isAuth ? <ProfilePage /> : <Navigate to="/" />}
             />
+            <Route path="/explore" element={<Explore />} />
+            <Route path="/employer" element={<Employer />} />
           </Routes>
         </ThemeProvider>
       </BrowserRouter>
