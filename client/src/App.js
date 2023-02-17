@@ -1,48 +1,43 @@
-import { BrowserRouter, Navigate, Routes, Route } from "react-router-dom";
-import HomePage from "scenes/homePage";
-import LoginPage from "scenes/loginPage";
-import ProfilePage from "scenes/profilePage";
-import { useMemo } from "react";
-import { useSelector } from "react-redux";
-import { CssBaseline, ThemeProvider } from "@mui/material";
-import { createTheme } from "@mui/material/styles";
-import { themeSettings } from "./theme";
-import { Landing } from "scenes/landing/Landing";
-import { Pension } from "scenes/pension/Pension";
-import { Mental } from "scenes/mental/Mental";
-import { Ptsd } from "scenes/mental/Ptsd";
-import { Trauma } from "scenes/ptsd/Trauma";
+import { BrowserRouter, Navigate, Routes, Route } from 'react-router-dom';
+import HomePage from 'scenes/homePage';
+import LoginPage from 'scenes/loginPage';
+import ProfilePage from 'scenes/profilePage';
+import JobsPage from 'scenes/JobsPage';
+import { useMemo } from 'react';
+import { useSelector } from 'react-redux';
+import { CssBaseline, ThemeProvider } from '@mui/material';
+import { createTheme } from '@mui/material/styles';
+import { themeSettings } from './theme';
+import { Landing } from 'scenes/landing/Landing';
+import { Pension } from 'scenes/pension/Pension';
+import { Mental } from 'scenes/mental/Mental';
+import { Ptsd } from 'scenes/mental/Ptsd';
+import { Trauma } from 'scenes/ptsd/Trauma';
 
 function App() {
-	const mode = useSelector((state) => state.mode);
-	const theme = useMemo(() => createTheme(themeSettings(mode)), [mode]);
-	const isAuth = Boolean(useSelector((state) => state.token));
+  const mode = useSelector((state) => state.mode);
+  const theme = useMemo(() => createTheme(themeSettings(mode)), [mode]);
+  const isAuth = Boolean(useSelector((state) => state.token));
 
-	return (
-		<div className="app">
-			<BrowserRouter>
-				<ThemeProvider theme={theme}>
-					<CssBaseline />
-					<Routes>
-						<Route path="/" element={<Landing />} />
-						<Route
-							path="/home"
-							element={isAuth ? <HomePage /> : <Navigate to="/" />}
-						/>
-						<Route path="/login" element={<LoginPage />} />
-						<Route path="/pension" element={<Pension />} />
-						<Route path="/mental-health" element={<Mental />} />
-						<Route path="/ptsd" element={<Trauma />} />
+  return (
+    <div className="app">
+      <BrowserRouter>
+        <ThemeProvider theme={theme}>
+          <CssBaseline />
+          <Routes>
+            <Route path="/" element={<Landing />} />
+            <Route path="/home" element={isAuth ? <HomePage /> : <Navigate to="/" />} />
+            <Route path="/login" element={<LoginPage />} />
+            <Route path="/pension" element={<Pension />} />
+            <Route path="/mental-health" element={<Mental />} />
+            <Route path="/ptsd" element={<Trauma />} />
 
-						<Route
-							path="/profile/:userId"
-							element={isAuth ? <ProfilePage /> : <Navigate to="/" />}
-						/>
-					</Routes>
-				</ThemeProvider>
-			</BrowserRouter>
-		</div>
-	);
+            <Route path="/profile/:userId" element={isAuth ? <ProfilePage /> : <Navigate to="/" />} />
+          </Routes>
+        </ThemeProvider>
+      </BrowserRouter>
+    </div>
+  );
 }
 
 export default App;
