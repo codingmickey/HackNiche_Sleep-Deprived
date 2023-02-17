@@ -1,6 +1,7 @@
 import { Button, Typography } from '@mui/material';
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import Navbar1 from '../navbar/Navbar1';
 import '../pension/Pension.css';
 export const Mhgames = () => {
   //   const [stateyes, setYesstate] = useState(false);
@@ -25,6 +26,7 @@ export const Mhgames = () => {
   //   };
   return (
     <div>
+      <Navbar1 />
       <div
         style={{
           height: '40vh',
@@ -193,7 +195,7 @@ export const Mhgames = () => {
           No
         </Button>
       </div>
-      <Link to="/game1">
+      <Link to={yes >= 3 ? '/game2' : '/game1'}>
         <Button
           variant="contained"
           sx={{

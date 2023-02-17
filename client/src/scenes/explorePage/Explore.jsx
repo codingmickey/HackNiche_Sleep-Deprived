@@ -1,6 +1,6 @@
 import ExploreCard from '../../components/ExploreCard';
 import React from 'react';
-import Navbar from '../navbar';
+// import Navbar from '../navbar';
 import Navbar1 from '../navbar';
 
 export const Explore = () => {
