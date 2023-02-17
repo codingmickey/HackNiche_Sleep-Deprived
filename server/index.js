@@ -57,6 +57,9 @@ app.use('/posts', postRoutes);
 app.use('/blogs', blogRoutes);
 app.use('/jobs', jobRoutes);
 app.use('/', donationRoutes);
+app.use('/', (req, res) => {
+  res.send('Welcome to the API');
+});
 
 /* MONGOOSE SETUP */
 const PORT = process.env.PORT || 6001;
