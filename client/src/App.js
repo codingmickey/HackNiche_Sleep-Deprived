@@ -7,7 +7,7 @@ import { useSelector } from 'react-redux';
 import { CssBaseline, ThemeProvider } from '@mui/material';
 import { createTheme } from '@mui/material/styles';
 import { themeSettings } from './theme';
-import { Explore } from 'scenes/explorePage/Explore';
+import { Landing } from 'scenes/landing/Landing';
 
 function App() {
   const mode = useSelector((state) => state.mode);
@@ -20,16 +20,16 @@ function App() {
         <ThemeProvider theme={theme}>
           <CssBaseline />
           <Routes>
-            <Route path="/" element={<LoginPage />} />
+            <Route path="/" element={<Landing />} />
             <Route
               path="/home"
               element={isAuth ? <HomePage /> : <Navigate to="/" />}
             />
+            <Route path="/login" element={<LoginPage />} />
             <Route
               path="/profile/:userId"
               element={isAuth ? <ProfilePage /> : <Navigate to="/" />}
             />
-            <Route path="/explore" element={<Explore />} />
           </Routes>
         </ThemeProvider>
       </BrowserRouter>
