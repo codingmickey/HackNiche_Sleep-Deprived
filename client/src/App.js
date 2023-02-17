@@ -10,6 +10,10 @@ import { themeSettings } from './theme';
 import { Landing } from 'scenes/landing/Landing';
 import { Explore } from 'scenes/explorePage/Explore';
 import { Employer } from 'scenes/EmployerPage/Employer';
+import { Blog } from 'scenes/BlogPage/Blog';
+import { Transition } from 'scenes/TransitionPage/Transition';
+import { Donation } from 'scenes/DonationPage/Donation';
+import House from 'scenes/HouseHuntPage/House';
 
 function App() {
   const mode = useSelector((state) => state.mode);
@@ -34,6 +38,10 @@ function App() {
             />
             <Route path="/explore" element={<Explore />} />
             <Route path="/employer" element={<Employer />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/map" element={<House />} />
+            <Route path="/transition" element={<Transition />} />
+            <Route path="/donation" element={<Donation />} />
           </Routes>
         </ThemeProvider>
       </BrowserRouter>
