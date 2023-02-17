@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import {
   Box,
   IconButton,
@@ -6,10 +6,14 @@ import {
   Typography,
   Select,
   MenuItem,
+  MenuList,
   FormControl,
   useTheme,
   useMediaQuery,
+  ListItemIcon,
+  ListItemText,
 } from '@mui/material';
+// import Menu from '@mui/material/Menu';
 import {
   Search,
   Message,
@@ -19,13 +23,35 @@ import {
   Help,
   Menu,
   Close,
+  Print,
+  Save,
+  Share,
 } from '@mui/icons-material';
 import { useDispatch, useSelector } from 'react-redux';
 import { setMode, setLogout } from 'state';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import FlexBetween from 'components/FlexBetween';
 
-const Navbar = () => {
+const Navbar1 = () => {
+  const [support, setSupport] = useState(false);
+  const [community, setCommunity] = useState(false);
+  const [pension, setPension] = useState(false);
+  const handleSupport = () => {
+    setSupport(!support);
+    setCommunity(false);
+    setPension(false);
+  };
+  const handleCommunity = () => {
+    setCommunity(!community);
+    setSupport(false);
+    setPension(false);
+  };
+  const handlePension = () => {
+    setSupport(!support);
+    setCommunity(false);
+    setSupport(false);
+  };
+
   const [isMobileMenuToggled, setIsMobileMenuToggled] = useState(false);
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -43,21 +69,17 @@ const Navbar = () => {
   const fullName = 'Meet Patel';
 
   return (
-    <FlexBetween padding="1rem 6%" backgroundColor={alt}>
+    <FlexBetween padding="1rem 4%" backgroundColor={alt}>
       <FlexBetween gap="1.75rem">
         <Typography
           fontWeight="bold"
-          fontSize="clamp(1rem, 2rem, 2.25rem)"
           color="primary"
           onClick={() => navigate('/home')}
-          sx={{
-            '&:hover': {
-              color: primaryLight,
-              cursor: 'pointer',
-            },
-          }}
         >
-          Sociopedia
+          <span className="text-center cursor-pointer text-[1.8rem] tracking-wider">
+            सैनिक सुविधा
+            {/* <div className="text-xs">Sainik Suvidha</div> */}
+          </span>
         </Typography>
         {isNonMobileScreens && (
           <FlexBetween
@@ -77,6 +99,57 @@ const Navbar = () => {
       {/* DESKTOP NAV */}
       {isNonMobileScreens ? (
         <FlexBetween gap="2rem">
+          <Link to="/">
+            <Typography variant="h5">Job</Typography>
+          </Link>
+          {/* <Link to="/"> */}
+          <span className="cursor-pointer relative">
+            <Typography variant="h5" onClick={handleSupport}>
+              Support
+            </Typography>
+            <div
+              className={`bg-white w-32 tracking-wider text-[1rem] top-5 my-2 rounded border-gray-300 border-[0.09rem] ${
+                support ? 'absolute' : 'hidden'
+              }`}
+            >
+              <div className="font-sans cursor-pointer hover:bg-slate-50 px-2 py-1 mt-1">
+                House Hunt
+              </div>
+              <div className="font-sans cursor-pointer hover:bg-slate-50 px-2 py-1 mt-1">
+                Transition
+              </div>
+              <div className="font-sans cursor-pointer hover:bg-slate-50 px-2 py-1 mt-1 mb-1">
+                Mental Health
+              </div>
+            </div>
+          </span>
+          <span className="cursor-pointer relative">
+            <Typography variant="h5" onClick={handleCommunity}>
+              Community
+            </Typography>
+            <div
+              className={`bg-white w-32 tracking-wider text-[1rem] top-5 my-2 rounded border-gray-300 border-[0.09rem] ${
+                community ? 'absolute' : 'hidden'
+              }`}
+            >
+              <div className="font-sans cursor-pointer hover:bg-slate-50 px-2 py-1 mt-1">
+                Meets
+              </div>
+              <div className="font-sans cursor-pointer hover:bg-slate-50 px-2 py-1 mt-1 mb-1">
+                Blogs
+              </div>
+              {/* <div className="font-sans cursor-pointer hover:bg-slate-50 px-2 py-1 mt-1 mb-1">
+                
+              </div> */}
+            </div>
+          </span>
+          <Link to="/">
+            <Typography variant="h5">Pension</Typography>
+          </Link>
+          {/* </Link> */}
+          {/* <Link to="/">
+            <Typography variant="h5">Community</Typography>
+          </Link> */}
           <IconButton onClick={() => dispatch(setMode())}>
             {theme.palette.mode === 'dark' ? (
               <DarkMode sx={{ fontSize: '25px' }} />
@@ -84,9 +157,9 @@ const Navbar = () => {
               <LightMode sx={{ color: dark, fontSize: '25px' }} />
             )}
           </IconButton>
-          <Message sx={{ fontSize: '25px' }} />
+          {/* <Message sx={{ fontSize: '25px' }} />
           <Notifications sx={{ fontSize: '25px' }} />
-          <Help sx={{ fontSize: '25px' }} />
+          <Help sx={{ fontSize: '25px' }} /> */}
           <FormControl variant="standard" value={fullName}>
             <Select
               value={fullName}
@@ -159,9 +232,9 @@ const Navbar = () => {
                 <LightMode sx={{ color: dark, fontSize: '25px' }} />
               )}
             </IconButton>
-            <Message sx={{ fontSize: '25px' }} />
-            <Notifications sx={{ fontSize: '25px' }} />
-            <Help sx={{ fontSize: '25px' }} />
+            {/* <Message sx={{ fontSize: '25px' }} /> */}
+            {/* <Notifications sx={{ fontSize: '25px' }} /> */}
+            {/* <Help sx={{ fontSize: '25px' }} /> */}
             <FormControl variant="standard" value={fullName}>
               <Select
                 value={fullName}
@@ -195,4 +268,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default Navbar1;
