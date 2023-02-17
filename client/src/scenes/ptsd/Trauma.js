@@ -1,5 +1,6 @@
 import React from 'react';
 import img from '../ptsd/trauma.svg';
+import { Games } from './Games';
 import { Reels } from './Reels';
 export const Trauma = () => {
   return (
@@ -28,11 +29,12 @@ export const Trauma = () => {
             combative or protective behavior.
           </h1>
         </div>
-        <div style={{ padding: '10px'}}>
+        <div style={{ padding: '10px' }}>
           <img src={img} height="400px" width="300px" alt="" style={{ marginLeft: '50px' }} />
         </div>
       </div>
       <Reels />
+      <Games />
     </div>
   );
 };

@@ -67,7 +67,7 @@ export const Mental = () => {
 							paddingTop: "20px",
 						}}
 						title="Mental Health"
-						subheader="Easy to clean, hassle free"
+						subheader="All health matters"
 					/>
 					<CardMedia
 						component="img"

@@ -13,6 +13,10 @@ import { Pension } from 'scenes/pension/Pension';
 import { Mental } from 'scenes/mental/Mental';
 import { Ptsd } from 'scenes/mental/Ptsd';
 import { Trauma } from 'scenes/ptsd/Trauma';
+import Navbar1 from './scenes/navbar/Navbar1';
+import { Mhgames } from './scenes/games/Mhgames';
+import { Game1 } from './scenes/games/Game1';
+import { Game2 } from './scenes/games/game2/Game2';
 
 function App() {
   const mode = useSelector((state) => state.mode);
@@ -24,6 +28,7 @@ function App() {
       <BrowserRouter>
         <ThemeProvider theme={theme}>
           <CssBaseline />
+
           <Routes>
             <Route path="/" element={<Landing />} />
             <Route path="/home" element={isAuth ? <HomePage /> : <Navigate to="/" />} />
@@ -31,6 +36,9 @@ function App() {
             <Route path="/pension" element={<Pension />} />
             <Route path="/mental-health" element={<Mental />} />
             <Route path="/ptsd" element={<Trauma />} />
+            <Route path="/ptsd-game" element={<Mhgames />} />
+            <Route path="/game1" element={<Game1 />} />
+            <Route path="/game2" element={<Game2 />} />
 
             <Route path="/profile/:userId" element={isAuth ? <ProfilePage /> : <Navigate to="/" />} />
           </Routes>
