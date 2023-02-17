@@ -76,7 +76,7 @@ const Navbar1 = () => {
           color="primary"
           onClick={() => navigate('/home')}
         >
-          <span className="text-center cursor-pointer text-[1.8rem] tracking-wider">
+          <span className="text-center cursor-pointer text-[1.8rem] tracking-wider text-orange">
             सैनिक सुविधा
             {/* <div className="text-xs">Sainik Suvidha</div> */}
           </span>
@@ -108,9 +108,8 @@ const Navbar1 = () => {
               Support
             </Typography>
             <div
-              className={`bg-white w-32 tracking-wider text-[1rem] top-5 my-2 rounded border-gray-300 border-[0.09rem] ${
-                support ? 'absolute' : 'hidden'
-              }`}
+              className={`bg-white w-32 tracking-wider text-[1rem] top-5 my-2 rounded border-gray-300 border-[0.09rem] 
+              ${support ? 'absolute' : 'hidden'}`}
             >
               <div className="font-sans cursor-pointer hover:bg-slate-50 px-2 py-1 mt-1">
                 House Hunt
