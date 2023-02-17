@@ -1,12 +1,12 @@
 import { Box, useMediaQuery } from '@mui/material';
 import { useSelector } from 'react-redux';
-import Navbar from 'scenes/navbar';
-import FilterWidget from 'scenes/widgets/FilterWidget';
-import MyPostWidget from 'scenes/widgets/MyPostWidget';
-import PostsWidget from 'scenes/widgets/PostsWidget';
-import AdvertWidget from 'scenes/widgets/AdvertWidget';
-import FriendListWidget from 'scenes/widgets/FriendListWidget';
-import JobPostsWidget from './widgets/JobPostsWidget';
+import Navbar from '../navbar';
+import FilterWidget from '../widgets/FilterWidget';
+import MyPostWidget from '../widgets/MyPostWidget';
+import PostsWidget from '../widgets/PostsWidget';
+import AdvertWidget from '../widgets/AdvertWidget';
+import FriendListWidget from '../widgets/FriendListWidget';
+import JobPostsWidget from '../widgets/JobPostsWidget';
 
 const JobsPage = () => {
   const isNonMobileScreens = useMediaQuery('(min-width:1000px)');

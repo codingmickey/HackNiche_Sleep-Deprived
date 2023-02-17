@@ -1,7 +1,7 @@
-import ExploreCard from 'components/ExploreCard';
+import ExploreCard from '../../components/ExploreCard';
 import React from 'react';
-import Navbar from 'scenes/navbar';
-import Navbar1 from 'scenes/navbar/Navbar1';
+import Navbar from './scenes/navbar';
+import Navbar1 from './scenes/navbar/Navbar1';
 
 export const Explore = () => {
   const data = [

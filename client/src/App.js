@@ -1,25 +1,24 @@
 import { BrowserRouter, Navigate, Routes, Route } from 'react-router-dom';
-import HomePage from 'scenes/homePage';
-import LoginPage from 'scenes/loginPage';
-import ProfilePage from 'scenes/profilePage';
-import JobsPage from 'scenes/JobsPage';
+import HomePage from './scenes/homePage';
+import LoginPage from './scenes/loginPage';
+import ProfilePage from './scenes/profilePage';
+import JobsPage from './scenes/JobsPage';
 import { useMemo } from 'react';
 import { useSelector } from 'react-redux';
 import { CssBaseline, ThemeProvider } from '@mui/material';
 import { createTheme } from '@mui/material/styles';
 import { themeSettings } from './theme';
-import { Landing } from 'scenes/landing/Landing';
-import { Explore } from 'scenes/explorePage/Explore';
-import { Employer } from 'scenes/EmployerPage/Employer';
-import { Blog } from 'scenes/BlogPage/Blog';
-import { Transition } from 'scenes/TransitionPage/Transition';
-import { Donation } from 'scenes/DonationPage/Donation';
-import House from 'scenes/HouseHuntPage/House';
-
-import { Pension } from 'scenes/pension/Pension';
-import { Mental } from 'scenes/mental/Mental';
-import { Ptsd } from 'scenes/mental/Ptsd';
-import { Trauma } from 'scenes/ptsd/Trauma';
+import { Landing } from './scenes/landing/Landing';
+import { Explore } from './scenes/explorePage/Explore';
+import { Employer } from './scenes/EmployerPage/Employer';
+import { Blog } from './scenes/BlogPage/Blog';
+import { Transition } from './scenes/TransitionPage/Transition';
+import { Donation } from './scenes/DonationPage/Donation';
+import House from './scenes/HouseHuntPage/House';
+import { Pension } from './scenes/pension/Pension';
+import { Mental } from './scenes/mental/Mental';
+import { Ptsd } from './scenes/mental/Ptsd';
+import { Trauma } from './scenes/ptsd/Trauma';
 
 function App() {
   const mode = useSelector((state) => state.mode);

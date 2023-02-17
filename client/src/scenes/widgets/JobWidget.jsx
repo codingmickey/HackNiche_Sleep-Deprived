@@ -5,12 +5,12 @@ import {
   ShareOutlined
 } from '@mui/icons-material';
 import { Box, Button, Chip, Divider, IconButton, Stack, Typography, useTheme } from '@mui/material';
-import FlexBetween from 'components/FlexBetween';
-import Friend from 'components/Friend';
-import WidgetWrapper from 'components/WidgetWrapper';
+import FlexBetween from '../../components/FlexBetween';
+import Friend from '../../components/Friend';
+import WidgetWrapper from '../../components/WidgetWrapper';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { setPost } from 'state';
+import { setPost } from '../../state';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import PlayCircleFilledWhiteIcon from '@mui/icons-material/PlayCircleFilledWhite';
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';

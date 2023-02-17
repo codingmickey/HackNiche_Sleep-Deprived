@@ -11,7 +11,7 @@ import {
   useTheme,
   useMediaQuery,
   ListItemIcon,
-  ListItemText,
+  ListItemText
 } from '@mui/material';
 // import Menu from '@mui/material/Menu';
 import {
@@ -25,12 +25,12 @@ import {
   Close,
   Print,
   Save,
-  Share,
+  Share
 } from '@mui/icons-material';
 import { useDispatch, useSelector } from 'react-redux';
 import { setMode, setLogout } from 'state';
 import { Link, useNavigate } from 'react-router-dom';
-import FlexBetween from 'components/FlexBetween';
+import FlexBetween from '../../components/FlexBetween';
 
 const Navbar1 = () => {
   const [support, setSupport] = useState(false);
@@ -71,23 +71,14 @@ const Navbar1 = () => {
   return (
     <FlexBetween padding="1rem 4%" backgroundColor={alt}>
       <FlexBetween gap="1.75rem">
-        <Typography
-          fontWeight="bold"
-          color="primary"
-          onClick={() => navigate('/home')}
-        >
+        <Typography fontWeight="bold" color="primary" onClick={() => navigate('/home')}>
           <span className="text-center cursor-pointer text-[1.8rem] tracking-wider text-orange">
             सैनिक सुविधा
             {/* <div className="text-xs">Sainik Suvidha</div> */}
           </span>
         </Typography>
         {isNonMobileScreens && (
-          <FlexBetween
-            backgroundColor={neutralLight}
-            borderRadius="9px"
-            gap="3rem"
-            padding="0.1rem 1.5rem"
-          >
+          <FlexBetween backgroundColor={neutralLight} borderRadius="9px" gap="3rem" padding="0.1rem 1.5rem">
             <InputBase placeholder="Search..." />
             <IconButton>
               <Search />
@@ -108,18 +99,13 @@ const Navbar1 = () => {
               Support
             </Typography>
             <div
-              className={`bg-white w-32 tracking-wider text-[1rem] top-5 my-2 rounded border-gray-300 border-[0.09rem] 
-              ${support ? 'absolute' : 'hidden'}`}
+              className={`bg-white w-32 tracking-wider text-[1rem] top-5 my-2 rounded border-gray-300 border-[0.09rem] ${
+                support ? 'absolute' : 'hidden'
+              }`}
             >
-              <div className="font-sans cursor-pointer hover:bg-slate-50 px-2 py-1 mt-1">
-                House Hunt
-              </div>
-              <div className="font-sans cursor-pointer hover:bg-slate-50 px-2 py-1 mt-1">
-                Transition
-              </div>
-              <div className="font-sans cursor-pointer hover:bg-slate-50 px-2 py-1 mt-1 mb-1">
-                Mental Health
-              </div>
+              <div className="font-sans cursor-pointer hover:bg-slate-50 px-2 py-1 mt-1">House Hunt</div>
+              <div className="font-sans cursor-pointer hover:bg-slate-50 px-2 py-1 mt-1">Transition</div>
+              <div className="font-sans cursor-pointer hover:bg-slate-50 px-2 py-1 mt-1 mb-1">Mental Health</div>
             </div>
           </span>
           <span className="cursor-pointer relative">
@@ -131,12 +117,8 @@ const Navbar1 = () => {
                 community ? 'absolute' : 'hidden'
               }`}
             >
-              <div className="font-sans cursor-pointer hover:bg-slate-50 px-2 py-1 mt-1">
-                Meets
-              </div>
-              <div className="font-sans cursor-pointer hover:bg-slate-50 px-2 py-1 mt-1 mb-1">
-                Blogs
-              </div>
+              <div className="font-sans cursor-pointer hover:bg-slate-50 px-2 py-1 mt-1">Meets</div>
+              <div className="font-sans cursor-pointer hover:bg-slate-50 px-2 py-1 mt-1 mb-1">Blogs</div>
               {/* <div className="font-sans cursor-pointer hover:bg-slate-50 px-2 py-1 mt-1 mb-1">
                 
               </div> */}
@@ -169,11 +151,11 @@ const Navbar1 = () => {
                 p: '0.25rem 1rem',
                 '& .MuiSvgIcon-root': {
                   pr: '0.25rem',
-                  width: '3rem',
+                  width: '3rem'
                 },
                 '& .MuiSelect-select:focus': {
-                  backgroundColor: neutralLight,
-                },
+                  backgroundColor: neutralLight
+                }
               }}
               input={<InputBase />}
             >
@@ -185,9 +167,7 @@ const Navbar1 = () => {
           </FormControl>
         </FlexBetween>
       ) : (
-        <IconButton
-          onClick={() => setIsMobileMenuToggled(!isMobileMenuToggled)}
-        >
+        <IconButton onClick={() => setIsMobileMenuToggled(!isMobileMenuToggled)}>
           <Menu />
         </IconButton>
       )}
@@ -206,25 +186,14 @@ const Navbar1 = () => {
         >
           {/* CLOSE ICON */}
           <Box display="flex" justifyContent="flex-end" p="1rem">
-            <IconButton
-              onClick={() => setIsMobileMenuToggled(!isMobileMenuToggled)}
-            >
+            <IconButton onClick={() => setIsMobileMenuToggled(!isMobileMenuToggled)}>
               <Close />
             </IconButton>
           </Box>
 
           {/* MENU ITEMS */}
-          <FlexBetween
-            display="flex"
-            flexDirection="column"
-            justifyContent="center"
-            alignItems="center"
-            gap="3rem"
-          >
-            <IconButton
-              onClick={() => dispatch(setMode())}
-              sx={{ fontSize: '25px' }}
-            >
+          <FlexBetween display="flex" flexDirection="column" justifyContent="center" alignItems="center" gap="3rem">
+            <IconButton onClick={() => dispatch(setMode())} sx={{ fontSize: '25px' }}>
               {theme.palette.mode === 'dark' ? (
                 <DarkMode sx={{ fontSize: '25px' }} />
               ) : (
@@ -244,20 +213,18 @@ const Navbar1 = () => {
                   p: '0.25rem 1rem',
                   '& .MuiSvgIcon-root': {
                     pr: '0.25rem',
-                    width: '3rem',
+                    width: '3rem'
                   },
                   '& .MuiSelect-select:focus': {
-                    backgroundColor: neutralLight,
-                  },
+                    backgroundColor: neutralLight
+                  }
                 }}
                 input={<InputBase />}
               >
                 <MenuItem value={fullName}>
                   <Typography>{fullName}</Typography>
                 </MenuItem>
-                <MenuItem onClick={() => dispatch(setLogout())}>
-                  Log Out
-                </MenuItem>
+                <MenuItem onClick={() => dispatch(setLogout())}>Log Out</MenuItem>
               </Select>
             </FormControl>
           </FlexBetween>
