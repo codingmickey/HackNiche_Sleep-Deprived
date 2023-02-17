@@ -4,18 +4,19 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.AdapterView
-import android.widget.ArrayAdapter
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.GridLayoutManager
+import com.example.militaryhelpapp.R
 import com.example.militaryhelpapp.data.SubViews
 import com.example.militaryhelpapp.databinding.FragmentCommunityBinding
+import com.example.militaryhelpapp.recycleradapters.RecyclerAdapterSubView
 
 class CommunityFragment : Fragment() {
     private lateinit var binding: FragmentCommunityBinding
     private var subViews: ArrayList<SubViews> = arrayListOf(
-        SubViews(null, "Meet"),
-        SubViews(null, "Blog")
+        SubViews(R.drawable.baseline_groups_24, "Meet"),
+        SubViews(R.drawable.baseline_text_snippet_24, "Blog")
     )
 
     override fun onCreateView(
@@ -33,5 +34,9 @@ class CommunityFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        binding.recyclerViewCommunity.apply {
+            layoutManager = GridLayoutManager(requireContext(), 2)
+            adapter = RecyclerAdapterSubView(subViews)
+        }
     }
 }

@@ -124,7 +124,7 @@
                         android:id="@+id/pension_qualifying_service_months"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="#0000000"
+                        android:background="#00000000"
                         android:hint="Months"
                         android:textColor="@color/black"
                         android:textSize="20sp"

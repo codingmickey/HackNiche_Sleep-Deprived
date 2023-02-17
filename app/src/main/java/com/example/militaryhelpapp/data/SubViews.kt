@@ -1,6 +1,6 @@
 package com.example.militaryhelpapp.data
 
 data class SubViews(
-    val image: String?,
-    val text: String
+    val image: Int?,
+    val text: String?
 )
