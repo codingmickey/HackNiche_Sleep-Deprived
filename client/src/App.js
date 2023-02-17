@@ -8,6 +8,7 @@ import { CssBaseline, ThemeProvider } from "@mui/material";
 import { createTheme } from "@mui/material/styles";
 import { themeSettings } from "./theme";
 import { Landing } from "scenes/landing/Landing";
+import { Pension } from "scenes/pension/Pension";
 
 function App() {
 	const mode = useSelector((state) => state.mode);
@@ -26,6 +27,7 @@ function App() {
 							element={isAuth ? <HomePage /> : <Navigate to="/" />}
 						/>
 						<Route path="/login" element={<LoginPage />} />
+            <Route path="/pension" element={<Pension />} />
 						<Route
 							path="/profile/:userId"
 							element={isAuth ? <ProfilePage /> : <Navigate to="/" />}

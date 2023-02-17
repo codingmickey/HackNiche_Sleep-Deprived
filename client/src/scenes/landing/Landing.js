@@ -8,7 +8,7 @@ export const Landing = () => {
 	return (
 		<div>
 			<DrawerAppBar />
-			<div className="box">
+			<div className="box" style={{ bottom: "0", display:"relative" }}>
 				<div
 					className="inner-box"
 					style={{ paddingLeft: "150px", paddingTop: "5px" }}
@@ -38,18 +38,19 @@ export const Landing = () => {
 					></img>
 				</div>
 			</div>
-			<Stack direction="row" spacing={2}>
+			<Stack direction="row">
 				<Button
 					className="box"
 					component={Link}
 					to="/login"
 					sx={{
 						padding: "20px",
-						marginLeft: "150px",
+
 						backgroundColor: "#138808",
 						color: "#fff",
 					}}
 					variant="contained"
+					fullWidth
 				>
 					Signup/Login
 				</Button>
