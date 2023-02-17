@@ -1,30 +1,30 @@
-import ExploreCard from 'components/ExploreCard';
+import ExploreCard from '../../components/ExploreCard';
 import React from 'react';
-import Navbar from 'scenes/navbar';
-import Navbar1 from 'scenes/navbar/Navbar1';
+import Navbar from '../navbar';
+import Navbar1 from '../navbar';
 
 export const Explore = () => {
   const data = [
     {
       title: 'Job Employment',
       data: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla posuere leo at nunc tristique egestas. Mauris eu pharetra sem. ',
-      img: 'job-explore.png',
+      img: 'job-explore.png'
     },
     {
       title: 'Support',
       data: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla posuere leo at nunc tristique egestas. Mauris eu pharetra sem. ',
-      img: 'support.jpeg',
+      img: 'support.jpeg'
     },
     {
       title: 'Community',
       data: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla posuere leo at nunc tristique egestas. Mauris eu pharetra sem. ',
-      img: 'community.jpeg',
+      img: 'community.jpeg'
     },
     {
       title: 'Pension',
       data: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla posuere leo at nunc tristique egestas. Mauris eu pharetra sem. ',
-      img: 'pension2.jpeg',
-    },
+      img: 'pension2.jpeg'
+    }
   ];
 
   return (
