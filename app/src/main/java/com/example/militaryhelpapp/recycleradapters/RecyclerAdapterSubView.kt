@@ -3,8 +3,10 @@ package com.example.militaryhelpapp.recycleradapters
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.example.militaryhelpapp.R
 import com.example.militaryhelpapp.activities.*
 import com.example.militaryhelpapp.data.SubViews
 import com.example.militaryhelpapp.databinding.LayoutCardsBinding
@@ -22,6 +24,7 @@ class RecyclerAdapterSubView(private var data: List<SubViews>) :
         with(holder) {
             with(data[position]) {
                 binding.cardName.text = this.text
+//                binding.subviewCard.background = ContextCompat.getDrawable(itemView.context, this.image)
 
                 Glide.with(itemView)
                     .load(this.image)

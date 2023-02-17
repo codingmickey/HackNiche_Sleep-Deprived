@@ -29,7 +29,7 @@
 
             <ImageView
                 android:id="@+id/card_image"
-                android:layout_width="100dp"
+                android:layout_width="match_parent"
                 android:layout_height="100dp"
                 android:padding="5dp"
                 android:src="@mipmap/ic_launcher"
@@ -37,8 +37,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.5"
-                android:layout_marginTop="20dp"/>
+                app:layout_constraintVertical_bias="0.5" />
 
             <TextView
                 android:id="@+id/card_name"
@@ -50,7 +49,7 @@
                 android:hint="Name"
                 android:textSize="22sp"
                 android:textAlignment="center"
-                android:textColor="@color/blue"
+                android:textColor="@color/orange"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"

@@ -36,7 +36,7 @@ class MainActivity : AppCompatActivity() {
         supportActionBar?.setHomeButtonEnabled(true)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         toggle.isDrawerIndicatorEnabled = true
-        toggle.drawerArrowDrawable.color = ContextCompat.getColor(this, R.color.blue)
+        toggle.drawerArrowDrawable.color = ContextCompat.getColor(this, R.color.orange)
         binding.drawerLayout.addDrawerListener(toggle)
         toggle.syncState()
 

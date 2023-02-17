@@ -14,7 +14,7 @@
         android:theme="@style/Theme.MilitaryHelpApp"
         tools:targetApi="31">
         <activity
-            android:name=".JobDetailsActivity"
+            android:name=".activities.JobDetailsActivity"
             android:exported="false" />
         <activity
             android:name=".activities.MentalHealthActivity"

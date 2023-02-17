@@ -15,8 +15,8 @@ import com.example.militaryhelpapp.recycleradapters.RecyclerAdapterSubView
 class CommunityFragment : Fragment() {
     private lateinit var binding: FragmentCommunityBinding
     private var subViews: ArrayList<SubViews> = arrayListOf(
-        SubViews(R.drawable.baseline_groups_24, "Meet"),
-        SubViews(R.drawable.baseline_text_snippet_24, "Blog")
+        SubViews(R.drawable.community, "Meet"),
+        SubViews(R.drawable.blog, "Blog")
     )
 
     override fun onCreateView(

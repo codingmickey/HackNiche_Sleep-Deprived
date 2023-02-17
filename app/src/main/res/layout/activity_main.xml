@@ -25,7 +25,7 @@
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
-                app:titleTextColor="@color/white"/>
+                app:titleTextColor="@color/black"/>
 
         </com.google.android.material.appbar.AppBarLayout>
 
@@ -47,9 +47,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:elevation="20dp"
-            app:itemIconTint="@color/blue"
-            app:itemRippleColor="@color/light_blue"
-            app:itemTextColor="@color/blue"
+            app:itemIconTint="@color/orange"
+            app:itemRippleColor="@color/light_orange"
+            app:itemTextColor="@color/orange"
             app:labelVisibilityMode="labeled"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -64,7 +64,7 @@
         android:layout_height="match_parent"
         android:layout_gravity="start"
         app:menu="@menu/left_nav_menu"
-        app:itemTextColor="@color/blue"
-        app:itemIconTint="@color/blue"/>
+        app:itemTextColor="@color/orange"
+        app:itemIconTint="@color/orange"/>
 
 </androidx.drawerlayout.widget.DrawerLayout>

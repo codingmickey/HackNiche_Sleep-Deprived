@@ -27,7 +27,7 @@
                 app:layout_constraintVertical_bias="0.0"
                 android:text="Post"
                 android:textSize="22sp"
-                android:textColor="@color/blue"
+                android:textColor="@color/orange"
                 android:textStyle="bold"/>
 
             <androidx.cardview.widget.CardView
@@ -49,7 +49,7 @@
                     android:paddingStart="3dp"
                     android:paddingEnd="3dp"
                     android:textSize="14sp"
-                    android:textColor="@color/blue"/>
+                    android:textColor="@color/orange"/>
 
             </androidx.cardview.widget.CardView>
 
@@ -78,7 +78,7 @@
                 app:layout_constraintVertical_bias="0.0"
                 android:text="Total Qualifying Service"
                 android:textSize="22sp"
-                android:textColor="@color/blue"
+                android:textColor="@color/orange"
                 android:textStyle="bold"/>
 
             <LinearLayout
@@ -147,7 +147,7 @@
                 app:layout_constraintVertical_bias="0.0"
                 android:text="Sum of last 10 months Emoluments: (Basic Pay + NPA)\n(in Rs.)"
                 android:textSize="22sp"
-                android:textColor="@color/blue"
+                android:textColor="@color/orange"
                 android:textStyle="bold"/>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -208,7 +208,7 @@
                 app:layout_constraintVertical_bias="0.0"
                 android:text="The Pension you are elligible for is as follows"
                 android:textSize="22sp"
-                android:textColor="@color/blue"
+                android:textColor="@color/orange"
                 android:textStyle="bold"/>
 
             <androidx.cardview.widget.CardView
@@ -230,7 +230,7 @@
                     android:paddingStart="3dp"
                     android:paddingEnd="3dp"
                     android:textSize="14sp"
-                    android:textColor="@color/blue"/>
+                    android:textColor="@color/orange"/>
 
             </androidx.cardview.widget.CardView>
 

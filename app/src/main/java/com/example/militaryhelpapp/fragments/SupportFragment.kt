@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
+import com.example.militaryhelpapp.R
 import com.example.militaryhelpapp.data.SubViews
 import com.example.militaryhelpapp.databinding.FragmentSupportBinding
 import com.example.militaryhelpapp.recycleradapters.RecyclerAdapterSubView
@@ -14,9 +15,10 @@ import com.example.militaryhelpapp.recycleradapters.RecyclerAdapterSubView
 class SupportFragment : Fragment() {
     private lateinit var binding: FragmentSupportBinding
     private var subViews: ArrayList<SubViews> = arrayListOf(
-        SubViews(null, "Mental Health"),
-        SubViews(null, "PTSD"),
-        SubViews(null, "Drug Abuse")
+        SubViews(R.drawable.mental, "Mental Health"),
+        SubViews(R.drawable.trauma, "PTSD"),
+        SubViews(R.drawable.drug, "Drug Abuse"),
+        SubViews(R.drawable.donate, "Donation")
     )
 
     override fun onCreateView(
@@ -26,7 +28,7 @@ class SupportFragment : Fragment() {
         // Inflate the layout for this fragment
         binding = FragmentSupportBinding.inflate(layoutInflater, container, false)
 
-        (requireActivity() as AppCompatActivity).supportActionBar?.title = "Jobs"
+        (requireActivity() as AppCompatActivity).supportActionBar?.title = "Support"
 
         return binding.root
     }

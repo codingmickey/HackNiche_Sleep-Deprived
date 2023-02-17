@@ -43,7 +43,7 @@
                 app:layout_constraintVertical_bias="0.0" />
 
             <TextView
-                android:id="@+id/company_name"
+                android:id="@+id/job_company_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
@@ -59,7 +59,7 @@
                 app:layout_constraintVertical_bias="0.0" />
 
             <TextView
-                android:id="@+id/company_location"
+                android:id="@+id/job_company_location"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
@@ -71,7 +71,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/company_name"
+                app:layout_constraintTop_toBottomOf="@+id/job_company_name"
                 app:layout_constraintVertical_bias="0.0"
                 app:drawableStartCompat="@drawable/round_location_on_24"
                 android:drawablePadding="5dp"
@@ -94,7 +94,7 @@
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintVertical_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/company_location" />
+                app:layout_constraintTop_toBottomOf="@+id/job_company_location" />
 
             <TextView
                 android:id="@+id/job_start"
@@ -212,7 +212,7 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="3dp"
                 android:text="View Details"
-                android:textColor="@color/blue"
+                android:textColor="@color/orange"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toStartOf="@id/job_apply_now_button"
