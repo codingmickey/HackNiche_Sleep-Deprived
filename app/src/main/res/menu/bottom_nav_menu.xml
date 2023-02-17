@@ -14,11 +14,11 @@
     <item
         android:id="@+id/communityFragment"
         android:icon="@drawable/baseline_groups_24"
-        android:title="All Requests"/>
+        android:title="Community"/>
 
     <item
         android:id="@+id/pensionFragment"
         android:icon="@drawable/baseline_monetization_on_24"
-        android:title="Assigned"/>
+        android:title="Pension"/>
 
 </menu>
