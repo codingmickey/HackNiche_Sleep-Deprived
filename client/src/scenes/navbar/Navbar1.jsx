@@ -32,14 +32,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { setMode, setLogout } from '../../state';
 import { Link, useNavigate } from 'react-router-dom';
 import FlexBetween from '../../components/FlexBetween';
-<<<<<<< HEAD
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
-=======
-import { FontSize } from '../FontSize';
-import { Translate } from '../Translate';
-
->>>>>>> d359662aab64e4ec6c62691853d15556184df80c
 const Navbar1 = () => {
   const [support, setSupport] = useState(false);
   const [community, setCommunity] = useState(false);
