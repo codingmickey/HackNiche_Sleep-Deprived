@@ -1,6 +1,6 @@
-import Post from "../models/Post.js";
-import User from "../models/User.js";
-import Blog from "../models/Blog.js";
+import Post from '../models/Post.js';
+import User from '../models/User.js';
+import Blog from '../models/Blog.js';
 
 /* CREATE */
 export const createBlog = async (req, res) => {
@@ -19,7 +19,6 @@ export const createBlog = async (req, res) => {
     // );
 
     res.status(201).send({ data: blog });
-
   } catch (err) {
     res.status(409).json({ message: err.message });
   }

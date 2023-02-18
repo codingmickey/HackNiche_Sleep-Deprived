@@ -1,8 +1,23 @@
 import React, { useEffect, useState } from 'react';
 import Navbar1 from '../navbar/Navbar1';
-
+import axios from 'axios';
 export const Employer = () => {
   const [step, setStep] = useState(1);
+
+  const [name, Name] = useState('');
+  const [desc, Desc] = useState('');
+  const [logo, Logo] = useState('');
+  const [website, Website] = useState('');
+  const [social, Social] = useState('');
+  const [docs, Docs] = useState('');
+  const [type, Type] = useState('');
+  const [profile, Profile] = useState('');
+  const [skills, Skills] = useState('');
+  const [location, Location] = useState('');
+  const [city, City] = useState('');
+  const [openings, Openings] = useState('');
+  const [duration, Duration] = useState('');
+  const [salary, Salary] = useState('');
 
   useEffect(() => {
     window.scroll({
@@ -24,15 +39,24 @@ export const Employer = () => {
               type="text"
               className="placeholder:text-[1.0rem] bg-gray-100 outline-none py-1 px-4 mt-2 w-full"
               placeholder="Enter name here"
+              value={name}
+              onChange={(e) => Name(e.target.value)}
             />
             <div className="mt-5">Organization description</div>
             <textarea
               rows={4}
               className="placeholder:text-[1.0rem] bg-gray-100 outline-none py-1 px-4 mt-2 w-full "
               placeholder="Enter description here"
+              value={desc}
+              onChange={(e) => Desc(e.target.value)}
             />
             <div className="mt-5">Organization logo (Recommended)</div>
-            <input type="file" className="placeholder:text-[1.0rem] bg-gray-100 outline-none py-1 px-4 mt-2 w-full" />
+            <input
+              type="file"
+              className="placeholder:text-[1.0rem] bg-gray-100 outline-none py-1 px-4 mt-2 w-full"
+              value={logo}
+              onChange={(e) => Logo(e.target.value)}
+            />
 
             <div className=""></div>
           </div>
@@ -61,6 +85,8 @@ export const Employer = () => {
                 type="text"
                 className="placeholder:text-[1.0rem] bg-gray-100 outline-none py-1 px-4 mt-2 w-full"
                 placeholder="Enter url here"
+                value={website}
+                onChange={(e) => Website(e.target.value)}
               />
             </div>
             <div className="mt-10">
@@ -84,6 +110,8 @@ export const Employer = () => {
                 type="text"
                 className="placeholder:text-[1.0rem] bg-gray-100 outline-none py-1 px-4 mt-2 w-full"
                 placeholder="Enter link here"
+                value={social}
+                onChange={(e) => Social(e.target.value)}
               />
             </div>
             <div className="mt-10">
@@ -102,7 +130,12 @@ export const Employer = () => {
             </div>
             <div className="ml-7 mt-4">
               <div className="text-sm">Enter documents</div>
-              <input type="file" className="placeholder:text-[1.0rem] bg-gray-100 outline-none py-1 px-4 mt-2 w-full" />
+              <input
+                type="file"
+                className="placeholder:text-[1.0rem] bg-gray-100 outline-none py-1 px-4 mt-2 w-full"
+                value={docs}
+                onChange={(e) => Docs(e.target.value)}
+              />
             </div>
           </div>
           <div className="mt-5 flex justify-center">
@@ -130,6 +163,7 @@ export const Employer = () => {
                     name="type"
                     id="i1"
                     className="rounded-full h-4 w-4 border border-gray-300  cursor-pointer mr-3 mt-1"
+                    onClick={() => Type('Intership')}
                   />
                   <label htmlFor="i1" className="cursor-pointer">
                     Internship
@@ -141,6 +175,7 @@ export const Employer = () => {
                     name="type"
                     id="i2"
                     className="rounded-full h-4 w-4 border border-gray-300  cursor-pointer mr-3 mt-1"
+                    onClick={() => Type('Job')}
                   />
                   <label htmlFor="i2" className="cursor-pointer">
                     Fresher job
@@ -154,12 +189,16 @@ export const Employer = () => {
                 type="text"
                 className="placeholder:text-[1.0rem] bg-gray-100 outline-none py-1 px-4 mt-2 w-full"
                 placeholder="Enter profile here"
+                value={profile}
+                onChange={(e) => Profile(e.target.value)}
               />
               <div className="mt-5">Skills required (Optional)</div>
               <input
                 type="text"
                 className="placeholder:text-[1.0rem] bg-gray-100 outline-none py-1 px-4 mt-2 w-full"
                 placeholder="Enter skills here"
+                value={skills}
+                onChange={(e) => Skills(e.target.value)}
               />
               <div className="mt-5">Internship type</div>
               <div className="flex items-center mt-2">
@@ -191,6 +230,8 @@ export const Employer = () => {
                 type="text"
                 className="placeholder:text-[1.0rem] bg-gray-100 outline-none py-1 px-4 mt-2 w-full"
                 placeholder="Enter city here"
+                value={city}
+                onChange={(e) => City(e.target.value)}
               />
               <div className="mt-5">Number of openings</div>
               <input
@@ -203,6 +244,8 @@ export const Employer = () => {
                 type="text"
                 className="placeholder:text-[1.0rem] bg-gray-100 outline-none py-1 px-4 mt-2 w-full"
                 placeholder="Enter duration here"
+                value={duration}
+                onChange={(e) => Duration(e.target.value)}
               />
 
               <div className=""></div>
@@ -215,14 +258,27 @@ export const Employer = () => {
                 type="text"
                 className="placeholder:text-[1.0rem] bg-gray-100 outline-none py-1 px-4 mt-2 w-full"
                 placeholder="Enter stipend here"
+                value={salary}
+                onChange={(e) => Salary(e.target.value)}
               />
             </div>
             <div className="mt-5 flex justify-center">
               <button
                 className="px-5 py-1 bg-blue-500 hover:bg-blue-400 text-white text-lg rounded"
-                onClick={() => {
-                  setStep(3);
-                  alert('Job request posted');
+                onClick={async () => {
+                  // setStep(3);
+                  let org = { name, desc, logo, website, social, docs };
+                  let job = { type, profile, skills, location, city, openings, duration, salary };
+                  // console.log(org, job);
+                  let response = await axios.post('http://localhost:3001/jobs', {
+                    org,
+                    job
+                  });
+                  // console.log(response);
+                  if (response.status === 200 || response.status === 201) {
+                    alert('Blog post successfully');
+                  }
+                  // alert('Job request posted');
                 }}
               >
                 Post

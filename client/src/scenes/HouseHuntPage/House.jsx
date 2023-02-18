@@ -22,49 +22,74 @@ const House = () => {
 
   const houses = [
     {
-      city: 'Borivali',
+      address: 'D-503 NBCC HEIGHTS, SEC-89 GURUGRAM, borivali,Mumbai - 400067',
       description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla posuere leo at nunc tristique egestas',
       img: 'h1.jpeg',
-      pos: [19.237188, 72.844139]
+      pos: [19.237188, 72.844139],
+      price: '1.60 Cr',
+      flat: '2 bhk flats',
+      head: 'Sheetal Regaila'
     },
     {
-      city: 'Kandivali',
+      address: 'B-503 NBCC HEIGHTS, SEC-89 GURUGRAM, Kandivali , Mumbai - 400069',
       img: 'h2.jpeg',
       description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla posuere leo at nunc tristique egestas',
-      pos: [19.199821, 72.84259]
+      pos: [19.199821, 72.84259],
+      price: '1.60 Cr',
+      flat: '2 bhk flats',
+      head: 'Sheetal Regaila'
     },
     {
-      city: 'Malad',
+      address: 'C-503 NBCC HEIGHTS, SEC-89 GURUGRAM, Malad , Mumbai - 401269',
       img: 'h3.jpeg',
       description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla posuere leo at nunc tristique egestas',
-      pos: [19.17709, 72.843239]
+      pos: [19.17709, 72.843239],
+      price: '1.60 Cr',
+      flat: '2 bhk flats',
+      head: 'Sheetal Regaila'
     },
     {
+      address: 'E-503 NBCC HEIGHTS, SEC-89 GURUGRAM, Delhi - 401269',
       img: 'h4.jpeg',
       description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla posuere leo at nunc tristique egestas',
-      pos: [28.614454, 77.22689]
+      pos: [28.614454, 77.22689],
+      price: '1.60 Cr',
+      flat: '2 bhk flats',
+      head: 'Sheetal Regaila'
     },
     {
+      address: 'Z-Wing NBCC HEIGHTS, SEC-89 GURUGRAM, Delhi - 101269',
       img: 'h5.jpeg',
       pos: [28.603362, 77.190955],
       description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla posuere leo at nunc tristique egestas'
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla posuere leo at nunc tristique egestas',
+      price: '1.60 Cr',
+      flat: '2 bhk flats',
+      head: 'Sheetal Regaila'
     },
     {
+      address: 'F-wing NBCC HEIGHTS, SEC-89 GURUGRAM, Delhi - 111269',
       img: 'h6.jpeg',
       pos: [28.660617, 77.21466],
       description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla posuere leo at nunc tristique egestas'
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla posuere leo at nunc tristique egestas',
+      price: '1.60 Cr',
+      flat: '2 bhk flats',
+      head: 'Sheetal Regaila'
     },
     {
+      address: 'F-wing NBCC HEIGHTS, SEC-89 GURUGRAM, GUJarAt - 320269',
       img: 'h6.jpeg',
       pos: [22.258652, 71.192383],
       description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla posuere leo at nunc tristique egestas'
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla posuere leo at nunc tristique egestas',
+      price: '1.60 Cr',
+      flat: '2 bhk flats',
+      head: 'Sheetal Regaila'
     }
   ];
   const City = [
@@ -132,8 +157,8 @@ const House = () => {
           <img src={houseImg} height="300px" width="300px" alt="" style={{ marginLeft: '20px', marginTop: '50px' }} />
         </div>
       </div>
-      <div className="mx-auto mt-32 w-[65%]">
-        <div className="">
+      <div className="mx-auto mt-14 w-[65%]">
+        <div className="" id="top">
           <FormControl fullWidth>
             <InputLabel id="demo-simple-select-label">City</InputLabel>
             <Select
@@ -149,6 +174,27 @@ const House = () => {
             </Select>
           </FormControl>
         </div>
+        {view && (
+          <div className="bg-white rounded-lg shadow-lg mt-5 py-3 px-5 uppercase">
+            <div className="grid grid-cols-2 w-full">
+              {/* <div className="grid grid-cols-2 w-full border-grey border-[0.1rem] shadow-md py-2 px-5 rounded-lg"> */}
+              <div className="mt-5">
+                <div className="font-medium text-xl">{details.head}</div>
+                <div className="text- w-[80%] mt-2 tracking-wider">{details.address}</div>
+                <div className="mt-2  w-[80%] tracking-wider">{details.flat}</div>
+                <div className="mt-2 font-semibold w-[80%] tracking-wider">Price: {details.price}</div>
+                <div className="mt-2 ">
+                  <button className="px-5 py-1 bg-blue-500 text-white hover:bg-blue-400 text-lg rounded-lg">
+                    Send Details
+                  </button>
+                </div>
+              </div>
+              <div className="flex justify-center">
+                <img src={require(`../../../public/assets/${details.img}`)} className="" />
+              </div>
+            </div>
+          </div>
+        )}
         <div className="shadow-lg mt-5 mb-20 md:my-10">
           {/* <Map h="600px" houses={houses} City={City} center={center} /> */}
 
@@ -168,14 +214,15 @@ const House = () => {
                 <Marker position={item.pos}>
                   <Popup>
                     <div className="w-44 uppercase">
-                      D-503 NBCC HEIGHTS, SEC-89 GURUGRAM,
-                      {item.city} 122001
+                      {item.address}
                       <br />
                       <div
                         className="cursor-pointer text-orange"
                         onClick={() => {
                           setView(true);
                           setDetails(item);
+                          var elem = document.getElementById('top');
+                          elem.scrollIntoView();
                         }}
                       >
                         View Details
@@ -187,17 +234,29 @@ const House = () => {
             })}
           </MapContainer>
         </div>
-
-        {view && (
-          <div className="bg-white rounded-lg shadow-lg py-3 px-5">
-            <div className="grid cols-2 gap-20">
-              <div className=""></div>
-              <div className="">
-                <img src={require(`../../../public/assets/${details.img}`)} className="" />
+        <div className=" uppercase">
+          {houses.map((item) => {
+            return (
+              <div className="grid grid-cols-2 w-full border-grey border-[0.1rem] shadow-md py-4 px-5 rounded-lg mt-5">
+                {/* <div className="grid grid-cols-2 w-full mt-5 shadow-sm"> */}
+                <div className="mt-5">
+                  <div className="font-medium text-xl">{item.head}</div>
+                  <div className="text- w-[80%] mt-2 tracking-wider">{item.address}</div>
+                  <div className="mt-2  w-[80%] tracking-wider">{item.flat}</div>
+                  <div className="mt-2 font-semibold w-[80%] tracking-wider">Price: {item.price}</div>
+                  <div className="mt-4">
+                    <button className="px-5 py-1 bg-blue-500 text-white hover:bg-blue-400 text-lg rounded-lg">
+                      Send Details
+                    </button>
+                  </div>
+                </div>
+                <div className="flex justify-center">
+                  <img src={require(`../../../public/assets/${item.img}`)} className="w-80" />
+                </div>
               </div>
-            </div>
-          </div>
-        )}
+            );
+          })}
+        </div>
       </div>
       <div className="mt-10 h-5" />
     </>

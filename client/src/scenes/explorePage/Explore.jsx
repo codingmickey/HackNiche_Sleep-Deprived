@@ -1,5 +1,5 @@
 import ExploreCard from '../../components/ExploreCard';
-import React from 'react';
+import React, { useState } from 'react';
 import Navbar1 from '../navbar/Navbar1';
 
 export const Explore = () => {
