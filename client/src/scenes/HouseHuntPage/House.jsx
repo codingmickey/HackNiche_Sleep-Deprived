@@ -149,8 +149,8 @@ const House = () => {
               fontSize: '1.25em'
             }}
           >
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla posuere leo at nunc tristique egestas. Mauris
-            eu pharetra sem. Aliquam faucibus venenatis velit, eget aliquam purus feugiat eget.
+            For army personnel shifting is a part of life. Thus a house-hunt feature makes it easier for them to find
+            houses.
           </h3>
         </div>
         <div>
