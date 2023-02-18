@@ -50,6 +50,12 @@ class MainActivity : AppCompatActivity() {
                     finish()
                     return@setNavigationItemSelectedListener true
                 }
+                R.id.log_out -> {
+                    val intent = Intent(this, LoginActivity::class.java)
+                    startActivity(intent)
+                    finish()
+                    return@setNavigationItemSelectedListener true
+                }
 
                 else -> true
             }
