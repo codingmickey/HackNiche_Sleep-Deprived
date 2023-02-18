@@ -22,7 +22,7 @@ import FlexBetween from '../../components/FlexBetween';
 import WidgetWrapper from '../../components/WidgetWrapper';
 import { useSelector } from 'react-redux';
 import { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import FilterAltIcon from '@mui/icons-material/FilterAlt';
 import { jobsCategory } from '../../data/jobCategory';
 import { jobLocation } from '../../data/jobLocation';
@@ -166,6 +166,7 @@ const FilterWidget = ({ userId }) => {
             <KeyboardArrowDownIcon color="primary" />
           </Box>
         </Box>
+          <div className='text-center mt-4'>Become a Employer <Link to='/employer'><span className='font-medium underline underline-offset-[0.05rem]'>link</span></Link></div>
 
         {/*  
 

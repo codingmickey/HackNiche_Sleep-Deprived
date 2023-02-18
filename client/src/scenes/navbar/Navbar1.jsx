@@ -76,7 +76,7 @@ const Navbar1 = () => {
   return (
     <FlexBetween padding="1rem 4%" backgroundColor={alt}>
       <FlexBetween gap="1.75rem">
-        <Typography fontWeight="bold" color="primary" onClick={() => navigate('/home')}>
+        <Typography fontWeight="bold" color="primary" onClick={() => navigate('/explore')}>
           <span className="text-center cursor-pointer text-[1.8rem] tracking-wider text-orange">
             सैनिक सुविधा
             {/* <div className="text-xs">Sainik Suvidha</div> */}
@@ -155,7 +155,7 @@ const Navbar1 = () => {
                 community ? 'absolute' : 'hidden'
               }`}
             >
-              <div className="font-sans cursor-pointer hover:bg-slate-50 px-2 py-1 mt-1">Meets</div>
+              <div className="font-sans cursor-pointer hover:bg-slate-50 px-2 py-1 mt-1" onClick={() => navigate('/video-chat')}>Meets</div>
               <div
                 className="font-sans cursor-pointer hover:bg-slate-50 px-2 py-1 mt-1 mb-1"
                 onClick={() => navigate('/blog')}

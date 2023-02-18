@@ -184,7 +184,7 @@ export const Employer = () => {
               </div>
             </div>
             <div className="mx-auto border-[0.09rem] border-gray-300 bg-white rounded-md py-5 px-10 w-[50%] text-lg mt-10">
-              <div className="">Internship profile</div>
+              <div className="">Job profile</div>
               <input
                 type="text"
                 className="placeholder:text-[1.0rem] bg-gray-100 outline-none py-1 px-4 mt-2 w-full"
@@ -200,7 +200,7 @@ export const Employer = () => {
                 value={skills}
                 onChange={(e) => Skills(e.target.value)}
               />
-              <div className="mt-5">Internship type</div>
+              <div className="mt-5">Job type</div>
               <div className="flex items-center mt-2">
                 <div className="flex item-start">
                   <input

@@ -7,13 +7,9 @@ import { Button, CardActionArea } from '@mui/material';
 
 export default function ExploreCard({ item }) {
   return (
-    <Card sx={{ maxWidth: 320 }}>
+    <Card sx={{ maxWidth: 320, height: 375 }}>
       <CardActionArea>
-        <img
-          src={require(`../../public/assets/${item.img}`)}
-          className="h-52 w-fit mx-auto pt-2"
-          alt="/"
-        />
+        <img src={require(`../../public/assets/${item.img}`)} className="h-52 w-fit mx-auto pt-2" alt="/" />
         {/* <CardMedia
           sx={{ maxHeight: 180 }}
           component="img"
@@ -24,7 +20,7 @@ export default function ExploreCard({ item }) {
           <Typography gutterBottom variant="h3" component="div">
             {item.title}
           </Typography>
-          <Typography variant="h5" color="text.secondary">
+          <Typography sx={{}} variant="h5" color="text.secondary">
             {item.data}
           </Typography>
           {/* <button className="border-[0.08rem] px-5 tracking-widest hover py-2 text- mt-4 hover:bg-slate-50 bg-white border-gray-400 rounded outline-none">

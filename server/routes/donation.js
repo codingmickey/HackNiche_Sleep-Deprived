@@ -37,7 +37,7 @@ router.post('/donate', async (req, res) => {
     });
 
     const smsUtil = await sendSms({
-      to: '+9619247188',
+      to: '+919619247188',
       body: 'Your donation of Rs.2400 has been received. Thank you for your support. We will send you a receipt for your donation. Thank you for your support.'
     });
 

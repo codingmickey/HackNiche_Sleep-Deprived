@@ -120,6 +120,38 @@ const House = () => {
     window.location.reload();
   };
 
+  const sendMail = async () => {
+    const response = await fetch(`http://localhost:3001/auth/email`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        email: 'varunvekaria@gmail.com',
+        subject: 'Enquiry received for House Reallocation',
+        html: '<h1>New query received for your house! </h1><p>Hi, I am interested in the house by looking at the pictures.</p> <p>Thanks</p><p>Name: Kartik</p>WhatsApp me at: https://wa.me/919619247188</p>'
+        // attachments: ''
+      })
+    });
+    const data = await response.json();
+    console.log(data);
+    const response1 = await fetch(`http://localhost:3001/auth/sms`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        to: '+919987772704',
+        body: 'New Room Applicant Alert: Hi, I am interested in your house. Name: Kartik Phone: 9619247188, WhatsApp me at: https://wa.me/919619247188. Regards, Sainik Suvidha'
+        // attachments: ''
+      })
+    });
+
+    const data1 = await response1.json();
+    console.log(data1);
+    navigate('/success');
+  };
+
   return (
     <>
       <Navbar1 />
@@ -184,7 +216,10 @@ const House = () => {
                 <div className="mt-2  w-[80%] tracking-wider">{details.flat}</div>
                 <div className="mt-2 font-semibold w-[80%] tracking-wider">Price: {details.price}</div>
                 <div className="mt-2 ">
-                  <button className="px-5 py-1 bg-blue-500 text-white hover:bg-blue-400 text-lg rounded-lg">
+                  <button
+                    onClick={sendMail}
+                    className="px-5 py-1 bg-blue-500 text-white hover:bg-blue-400 text-lg rounded-lg"
+                  >
                     Send Details
                   </button>
                 </div>
@@ -245,7 +280,10 @@ const House = () => {
                   <div className="mt-2  w-[80%] tracking-wider">{item.flat}</div>
                   <div className="mt-2 font-semibold w-[80%] tracking-wider">Price: {item.price}</div>
                   <div className="mt-4">
-                    <button className="px-5 py-1 bg-blue-500 text-white hover:bg-blue-400 text-lg rounded-lg">
+                    <button
+                      onClick={sendMail}
+                      className="px-5 py-1 bg-blue-500 text-white hover:bg-blue-400 text-lg rounded-lg"
+                    >
                       Send Details
                     </button>
                   </div>

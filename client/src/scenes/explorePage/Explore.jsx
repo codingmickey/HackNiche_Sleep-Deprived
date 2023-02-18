@@ -34,16 +34,16 @@ export const Explore = () => {
 
       <div className="mt-28 flex justify-evenly">
         <Link to="/jobs">
-          <ExploreCard item={data[0]} />;
+          <ExploreCard item={data[0]} />
         </Link>
         <Link to="">
-          <ExploreCard item={data[1]} />;
+          <ExploreCard item={data[1]} />
         </Link>
         <Link to="">
-          <ExploreCard item={data[2]} />;
+          <ExploreCard item={data[2]} />
         </Link>
         <Link to="/pension">
-          <ExploreCard item={data[3]} />;
+          <ExploreCard item={data[3]} />
         </Link>
         {/* {data.map((item, i) => {
         })} */}
