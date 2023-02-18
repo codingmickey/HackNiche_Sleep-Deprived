@@ -5,6 +5,8 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.bumptech.glide.Glide
+import com.example.militaryhelpapp.R
 import com.example.militaryhelpapp.databinding.ActivityLoginBinding
 
 class LoginActivity : AppCompatActivity() {
@@ -44,6 +46,10 @@ class LoginActivity : AppCompatActivity() {
 
             singIn(email, password)
         }
+
+        Glide.with(this)
+            .load(R.drawable.army)
+            .into(binding.loginLogo)
 
         binding.signUpButtonLogin.setOnClickListener {
             val intent = Intent(this, SignUpActivity::class.java)
