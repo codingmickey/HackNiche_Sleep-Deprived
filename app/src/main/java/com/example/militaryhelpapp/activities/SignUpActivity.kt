@@ -44,6 +44,27 @@ class SignUpActivity : AppCompatActivity() {
         }
 
         binding.signUpButton.setOnClickListener {
+            if(binding.signUpNameText.text!!.isEmpty()) {
+                binding.signUpNameLayout.error = "Required*"
+                binding.signUpNameLayout.requestFocus()
+                return@setOnClickListener
+            }
+            if(binding.signUpAddressLayout.text!!.isEmpty()) {
+                binding.signUpAddressLayout.error = "Required*"
+                binding.signUpAddressLayout.requestFocus()
+                return@setOnClickListener
+            }
+            if(binding.signUpEmailText.text!!.isEmpty()) {
+                binding.signUpEmailLayout.error = "Required*"
+                binding.signUpEmailLayout.requestFocus()
+                return@setOnClickListener
+            }
+            if(binding.signUpPasswordText.text!!.isEmpty()) {
+                binding.signUpPasswordLayout.error = "Required*"
+                binding.signUpPasswordLayout.requestFocus()
+                return@setOnClickListener
+            }
+
             Toast.makeText(this, "Sign Up Successful!!", Toast.LENGTH_SHORT).show()
             val intent = Intent(this, MainActivity::class.java)
             intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK and Intent.FLAG_ACTIVITY_NEW_TASK

@@ -53,6 +53,17 @@ class LoginActivity : AppCompatActivity() {
         }
 
         binding.loginButton.setOnClickListener {
+            if(binding.loginEmailText.text!!.isEmpty()) {
+                binding.loginEmailLayout.error = "Required*"
+                binding.loginEmailLayout.requestFocus()
+                return@setOnClickListener
+            }
+            if(binding.loginPasswordText.text!!.isEmpty()) {
+                binding.loginPasswordLayout.error = "Required*"
+                binding.loginPasswordLayout.requestFocus()
+                return@setOnClickListener
+            }
+
             Toast.makeText(this, "Login Successful!!", Toast.LENGTH_SHORT).show()
             val intent = Intent(this, MainActivity::class.java)
             intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK and Intent.FLAG_ACTIVITY_NEW_TASK
