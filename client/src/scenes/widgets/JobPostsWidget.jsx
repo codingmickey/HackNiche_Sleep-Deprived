@@ -1,12 +1,13 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { setPosts } from '../../state';
+// import { setPosts } from '../../state';
 import JobWidget from './JobWidget';
 
 const JobPostsWidget = ({ userId, isProfile = false }) => {
   const dispatch = useDispatch();
-  const posts = useSelector((state) => state.posts);
+  // const posts = useSelector((state) => state.posts);
   const token = useSelector((state) => state.token);
+  const [posts, setPosts] = useState([]);
 
   const getPosts = async () => {
     const response = await fetch('http://localhost:3001/jobs', {
@@ -14,7 +15,7 @@ const JobPostsWidget = ({ userId, isProfile = false }) => {
     });
     const data = await response.json();
     console.log(data);
-    dispatch(setPosts({ posts: data }));
+    setPosts(data);
   };
 
   const getUserPosts = async () => {
@@ -30,13 +31,7 @@ const JobPostsWidget = ({ userId, isProfile = false }) => {
     getPosts();
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
-  return (
-    <>
-      {posts.map((post) => (
-        <JobWidget post={post} />
-      ))}
-    </>
-  );
+  return <>{posts ? posts.map((post) => <JobWidget post={post} />) : 'Loading..'}</>;
 };
 
 export default JobPostsWidget;

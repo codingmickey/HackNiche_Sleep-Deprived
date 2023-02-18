@@ -25,6 +25,7 @@ import { Game1 } from './scenes/games/Game1';
 import { Game2 } from './scenes/games/game2/Game2';
 import VideoCall from './scenes/VideoCall/VideoCall';
 import JoinRoom from './scenes/JoinMeet/JoinMeet';
+import Success from './components/Success';
 
 function App() {
   const mode = useSelector((state) => state.mode);
@@ -59,7 +60,7 @@ function App() {
             <Route path="/video-chat" element={<JoinRoom />} />
             <Route path="/video/:id" element={<VideoCall />} />
             <Route path="/jobs" element={<JobsPage />} />
-
+            <Route path="/success" element={<Success />} />
             <Route path="/profile/:userId" element={isAuth ? <ProfilePage /> : <Navigate to="/" />} />
           </Routes>
         </ThemeProvider>
