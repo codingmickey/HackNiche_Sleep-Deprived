@@ -1,6 +1,6 @@
 import { Box, useMediaQuery } from '@mui/material';
 import { useSelector } from 'react-redux';
-import Navbar from './navbar';
+import Navbar1 from './navbar/Navbar1';
 import FilterWidget from './widgets/FilterWidget';
 import MyPostWidget from './widgets/MyPostWidget';
 import PostsWidget from './widgets/PostsWidget';
@@ -14,7 +14,7 @@ const JobsPage = () => {
 
   return (
     <Box>
-      <Navbar />
+      <Navbar1 />
       <Box
         width="100%"
         padding="2rem 6%"

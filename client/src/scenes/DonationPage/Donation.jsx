@@ -1,9 +1,64 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import Navbar1 from '../navbar/Navbar1';
+import { useNavigate } from 'react-router-dom';
 
+import useRazorpay from 'react-razorpay';
 export const Donation = () => {
   const [step, setStep] = useState(0);
-  const [price, setPrice] = useState(0);
+  const [price, setPrice] = useState();
+  const [res, setRes] = useState();
+
+  const navigate = useNavigate();
+
+  const Razorpay = useRazorpay();
+
+  const handlePayment = useCallback(async () => {
+    fetch('http://localhost:3001/donate', {
+      method: 'POST',
+      body: JSON.stringify({ amount: price })
+    })
+      .then((results) => results.json())
+      .then((data) => {
+        const res = data;
+        setRes(res);
+        // console.log(res);
+        // setBlog([...res]);
+        console.log(res);
+
+        const options = {
+          key: 'rzp_test_71ifT7shoxSTLN',
+          amount: price,
+          currency: 'INR',
+          name: 'Sainik Suvidha',
+          description: 'Donate your amount',
+          image: 'https://example.com/your_logo',
+          order_id: res.op.id,
+          handler: (res) => {
+            console.log(res);
+            navigate('/success');
+          },
+          prefill: {
+            name: 'Piyush Garg',
+            email: 'youremail@example.com',
+            contact: '9999999999'
+          },
+          notes: {
+            address: 'Razorpay Corporate Office'
+          },
+          theme: {
+            color: '#3399cc'
+          }
+        };
+
+        const rzpay = new Razorpay(options);
+        rzpay.open();
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+
+    // console.log(res);
+  }, [Razorpay]);
 
   return (
     <>
@@ -31,7 +86,7 @@ export const Donation = () => {
                 className={`cursor-pointer text-center border-gray-300 rounded-md border-[0.09rem] text-[1rem] py-[0.5rem] ${
                   price == '200' ? 'bg-blue-400 text-white hover:bg-blue-400' : 'hover:bg-slate-50'
                 }`}
-                onClick={() => setPrice('200')}
+                onClick={() => setPrice(200)}
               >
                 ₹ 200
               </div>
@@ -39,7 +94,7 @@ export const Donation = () => {
                 className={`cursor-pointer text-center border-gray-300 rounded-md border-[0.09rem] text-[1rem] py-[0.5rem] ${
                   price == '1000' ? 'bg-blue-400 text-white hover:bg-blue-400' : 'hover:bg-slate-50'
                 }`}
-                onClick={() => setPrice('1000')}
+                onClick={() => setPrice(1000)}
               >
                 ₹ 1000
               </div>
@@ -47,7 +102,7 @@ export const Donation = () => {
                 className={`cursor-pointer text-center border-gray-300 rounded-md border-[0.09rem] text-[1rem] py-[0.5rem] ${
                   price == '2400' ? 'bg-blue-400 text-white hover:bg-blue-400' : 'hover:bg-slate-50'
                 }`}
-                onClick={() => setPrice('2400')}
+                onClick={() => setPrice(2400)}
               >
                 ₹ 2400
               </div>
@@ -55,7 +110,7 @@ export const Donation = () => {
                 className={`cursor-pointer text-center border-gray-300 rounded-md border-[0.09rem]  text-[1rem] py-[0.5rem] ${
                   price == '5000' ? 'bg-blue-400 text-white' : 'hover:bg-slate-50'
                 }`}
-                onClick={() => setPrice('5000')}
+                onClick={() => setPrice(5000)}
               >
                 ₹ 5000
               </div>
@@ -146,7 +201,7 @@ export const Donation = () => {
               <div className="">
                 <button
                   className="px-5 py-1 bg-blue-500 text-white hover:bg-blue-400 text-lg rounded-full"
-                  onClick={() => setStep(0)}
+                  onClick={handlePayment}
                 >
                   Proceed to payment
                 </button>

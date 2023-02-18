@@ -32,8 +32,10 @@ import { useDispatch, useSelector } from 'react-redux';
 import { setMode, setLogout } from '../../state';
 import { Link, useNavigate } from 'react-router-dom';
 import FlexBetween from '../../components/FlexBetween';
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
+
 import { FontSize } from '../FontSize';
-import { Translate } from '../Translate';
 
 const Navbar1 = () => {
   const [support, setSupport] = useState(false);
@@ -99,10 +101,15 @@ const Navbar1 = () => {
             </Typography>
           </Link>
           {/* <Link to="/"> */}
-          <span className="cursor-pointer relative">
+          <span className="cursor-pointer relative flex">
             <Typography variant="h5" onClick={handleSupport}>
               Support
             </Typography>
+            {support ? (
+              <KeyboardArrowUpIcon onClick={handleSupport} />
+            ) : (
+              <KeyboardArrowDownIcon onClick={handleSupport} />
+            )}
             <div
               className={`bg-white w-32 tracking-wider text-[1rem] top-5 my-2 rounded border-gray-300 border-[0.09rem] ${
                 support ? 'absolute' : 'hidden'
@@ -134,10 +141,15 @@ const Navbar1 = () => {
               </div>
             </div>
           </span>
-          <span className="cursor-pointer relative">
+          <span className="cursor-pointer relative flex">
             <Typography variant="h5" onClick={handleCommunity}>
               Community
             </Typography>
+            {community ? (
+              <KeyboardArrowUpIcon onClick={handleCommunity} />
+            ) : (
+              <KeyboardArrowDownIcon onClick={handleCommunity} />
+            )}
             <div
               className={`bg-white w-32 tracking-wider text-[1rem] top-5 my-2 rounded border-gray-300 border-[0.09rem] ${
                 community ? 'absolute' : 'hidden'
@@ -149,6 +161,12 @@ const Navbar1 = () => {
                 onClick={() => navigate('/blog')}
               >
                 Blogs
+              </div>
+              <div
+                className="font-sans cursor-pointer hover:bg-slate-50 px-2 py-1 mt-1 mb-1"
+                onClick={() => navigate('/blog-create')}
+              >
+                Create Blog
               </div>
               {/* <div className="font-sans cursor-pointer hover:bg-slate-50 px-2 py-1 mt-1 mb-1">
                 
@@ -170,7 +188,7 @@ const Navbar1 = () => {
               <LightMode sx={{ color: dark, fontSize: '25px' }} />
             )}
           </IconButton>
-          <Translate />
+          {/* <Translate /> */}
           {/* <Message sx={{ fontSize: '25px' }} />
           <Notifications sx={{ fontSize: '25px' }} />
           <Help sx={{ fontSize: '25px' }} /> */}
