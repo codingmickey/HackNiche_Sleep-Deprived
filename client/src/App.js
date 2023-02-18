@@ -3,7 +3,7 @@ import HomePage from './scenes/homePage';
 import LoginPage from './scenes/loginPage';
 import ProfilePage from './scenes/profilePage';
 import JobsPage from './scenes/JobsPage';
-import { useMemo } from 'react';
+import React, { useEffect, useMemo } from 'react';
 import { useSelector } from 'react-redux';
 import { CssBaseline, ThemeProvider } from '@mui/material';
 import { createTheme } from '@mui/material/styles';
@@ -23,11 +23,33 @@ import Navbar1 from './scenes/navbar/Navbar1';
 import { Mhgames } from './scenes/games/Mhgames';
 import { Game1 } from './scenes/games/Game1';
 import { Game2 } from './scenes/games/game2/Game2';
+import axios from 'axios';
+import VideoCall from './scenes/VideoCall/VideoCall';
+import JoinRoom from './scenes/JoinMeet/JoinMeet';
+import Success from './components/Success';
 
 function App() {
   const mode = useSelector((state) => state.mode);
   const theme = useMemo(() => createTheme(themeSettings(mode)), [mode]);
   const isAuth = Boolean(useSelector((state) => state.token));
+  const [res, setRes] = React.useState();
+
+  useEffect(() => {
+    window.scroll({
+      top: 0,
+      left: 0,
+      behavior: 'smooth'
+    });
+
+    const f = async () => {
+      const response = await axios.get('http://localhost:3001/blogs');
+      if (response.status == 200) {
+        // console.log(response.data);
+        setRes(response);
+      }
+    };
+    f();
+  }, []);
 
   return (
     <div className="app">
@@ -43,7 +65,7 @@ function App() {
             <Route path="/profile/:userId" element={isAuth ? <ProfilePage /> : <Navigate to="/" />} />
             <Route path="/explore" element={<Explore />} />
             <Route path="/employer" element={<Employer />} />
-            <Route path="/blog" element={<Blog />} />
+            <Route path="/blog" element={<Blog blog={res} />} />
             <Route path="/house-hunt" element={<House />} />
             <Route path="/transition" element={<Transition />} />
             <Route path="/mental-health" element={<Mental />} />
@@ -53,6 +75,13 @@ function App() {
             <Route path="/game1" element={<Game1 />} />
             <Route path="/game2" element={<Game2 />} />
             <Route path="/pension" element={<Pension />} />
+            {/* <Route path="/video-chat" element={<VideoCall />} /> */}
+
+            <Route path="/video-chat" element={<JoinRoom />} />
+            <Route path="/video/:id" element={<VideoCall />} />
+            <Route path="/jobs" element={<JobsPage />} />
+            <Route path="/success" element={<Success />} />
+            <Route path="/profile/:userId" element={isAuth ? <ProfilePage /> : <Navigate to="/" />} />
           </Routes>
         </ThemeProvider>
       </BrowserRouter>
