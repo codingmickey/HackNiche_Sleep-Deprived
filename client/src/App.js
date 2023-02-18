@@ -23,6 +23,8 @@ import Navbar1 from './scenes/navbar/Navbar1';
 import { Mhgames } from './scenes/games/Mhgames';
 import { Game1 } from './scenes/games/Game1';
 import { Game2 } from './scenes/games/game2/Game2';
+import VideoCall from './scenes/VideoCall/VideoCall';
+import JoinRoom from './scenes/JoinMeet/JoinMeet';
 
 function App() {
   const mode = useSelector((state) => state.mode);
@@ -52,6 +54,11 @@ function App() {
             <Route path="/ptsd-game" element={<Mhgames />} />
             <Route path="/game1" element={<Game1 />} />
             <Route path="/game2" element={<Game2 />} />
+            {/* <Route path="/video-chat" element={<VideoCall />} /> */}
+
+            <Route path="/video-chat" element={<JoinRoom />} />
+            <Route path="/video/:id" element={<VideoCall />} />
+            <Route path="/jobs" element={<JobsPage />} />
 
             <Route path="/profile/:userId" element={isAuth ? <ProfilePage /> : <Navigate to="/" />} />
           </Routes>

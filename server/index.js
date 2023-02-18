@@ -20,6 +20,7 @@ import { verifyToken } from './middleware/auth.js';
 import User from './models/User.js';
 import Post from './models/Post.js';
 import { users, posts } from './data/index.js';
+import fetch from 'node-fetch';
 
 /* CONFIGURATIONS */
 const __filename = fileURLToPath(import.meta.url);
@@ -57,6 +58,65 @@ app.use('/posts', postRoutes);
 app.use('/blogs', blogRoutes);
 app.use('/jobs', jobRoutes);
 app.use('/', donationRoutes);
+const headers = {
+  Accept: 'application/json',
+  'Content-Type': 'application/json',
+  Authorization: 'Bearer ' + process.env.DAILY_API_KEY
+};
+
+const getRoom = async (room) => {
+  try {
+    const res = await fetch(`https://api.daily.co/v1/rooms/${room}`, {
+      method: 'GET',
+      headers
+    });
+    const json = await res.json();
+    console.log(json);
+    return json;
+  } catch (err) {
+    return console.error('error:' + err);
+  }
+};
+
+const createRoom = async (room) => {
+  try {
+    const res = await fetch('https://api.daily.co/v1/rooms', {
+      method: 'POST',
+      headers,
+      body: JSON.stringify({
+        name: room,
+        properties: {
+          enable_screenshare: true,
+          enable_chat: true,
+          start_video_off: true,
+          start_audio_off: false,
+          lang: 'en'
+        }
+      })
+    });
+    const json = await res.json();
+    console.log(json);
+    return json;
+  } catch (err) {
+    return console.log('error:' + err);
+  }
+};
+
+app.get('/video-call/:id', async function (req, res) {
+  const roomId = req.params.id;
+
+  console.log(roomId);
+
+  const room = await getRoom(roomId);
+  console.log(room);
+  if (room.error) {
+    const newRoom = await createRoom(roomId);
+    res.status(200).send(newRoom);
+  } else {
+    res.status(200).send(room);
+  }
+});
+
 app.use('/', (req, res) => {
   res.send('Welcome to the API');
 });
