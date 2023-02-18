@@ -21,11 +21,9 @@ export const Donation = () => {
           </div>
           <div className=" px-5 py-2">
             <div className="mt-5 text-[1.0rem]">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla posuere leo at nunc tristique egestas.
-              Mauris eu pharetra sem. Aliquam faucibus venenatis velit, eget aliquam purus feugiat eget Donec non massa
-              vel lorem laoreet consequat egestas eu lectus. Vestibulum ante ipsum primis in faucibus orci luctus et
-              ultrices posuere cubilia curae; Nam vitae faucibus mi. Maecenas congue orci id erat lobortis blandit.
-              Nulla id justo at justo vehicula semper.
+              To support the concern and sentiments of spirited citizens like you Indian Army is operating two accounts
+              viz Army Central Welfare Fund and Army Battle Casualties Welfare Fund, which accepts donation /
+              contribution, for serving and retired soldiers and their families
             </div>
             <div className="font-medium text-[1rem] mt-7">Select Amount</div>
             <div className="grid grid-cols-4 gap-20 mt-4">

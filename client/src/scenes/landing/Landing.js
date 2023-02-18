@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 export const Landing = () => {
   return (
     <div>
+		
       <DrawerAppBar />
       <div className="box" style={{ bottom: '0', display: 'relative' }}>
         <div className="inner-box" style={{ paddingLeft: '150px', paddingTop: '50px' }}>

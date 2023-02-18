@@ -35,7 +35,7 @@ export const Mental = () => {
               Mental <br></br> Health{' '}
             </p>
           </h1>
-          <h3 style={{ margin: '0', color: 'white', maxWidth: '600px' }}>
+          <h3 style={{ margin: '0', color: 'white', maxWidth: '600px', fontSize: '1.25em' }}>
             The most common mental health problems among personnel and veterans are depression, anxiety and alcohol
             problems. Most common experience is post-traumatic stress disorder (PTSD).
           </h3>
@@ -72,7 +72,7 @@ export const Mental = () => {
           />
 
           <CardContent>
-            <Typography variant="body2" sx={{ color: '#2c645b' }}>
+            <Typography variant="body2" sx={{ fontSize: '1.05em', color: '#2c645b' }}>
               Amazing mental health resources to combat anxiety, depression and much more.
             </Typography>
 
@@ -108,7 +108,7 @@ export const Mental = () => {
           />
 
           <CardContent>
-            <Typography variant="body2" sx={{ color: '#2c645b' }}>
+            <Typography variant="body2" sx={{ fontSize: '1.05em', color: '#2c645b' }}>
               Your battle with PTSD doesn't have to be alone.
             </Typography>
             <Link to="/ptsd">
@@ -135,7 +135,7 @@ export const Mental = () => {
               paddingTop: '20px'
             }}
             title="Drug Abuse"
-            subheader="It's not an addiction, just an ignorance measure"
+            subheader="It's not an addiction"
           />
           <CardMedia
             component="img"
@@ -145,7 +145,7 @@ export const Mental = () => {
           />
 
           <CardContent>
-            <Typography variant="body2" sx={{ color: '#2c645b' }}>
+            <Typography variant="body2" sx={{ fontSize: '1.05em', color: '#2c645b' }}>
               Amazing mental health resources to combat anxiety, depression and much more.
             </Typography>
             <Typography
