@@ -25,14 +25,21 @@ import {
   Close,
   Print,
   Save,
-  Share
+  Share,
+  Google
 } from '@mui/icons-material';
 import { useDispatch, useSelector } from 'react-redux';
 import { setMode, setLogout } from '../../state';
 import { Link, useNavigate } from 'react-router-dom';
 import FlexBetween from '../../components/FlexBetween';
+<<<<<<< HEAD
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
+=======
+import { FontSize } from '../FontSize';
+import { Translate } from '../Translate';
+
+>>>>>>> d359662aab64e4ec6c62691853d15556184df80c
 const Navbar1 = () => {
   const [support, setSupport] = useState(false);
   const [community, setCommunity] = useState(false);
@@ -92,7 +99,9 @@ const Navbar1 = () => {
       {isNonMobileScreens ? (
         <FlexBetween gap="2rem">
           <Link to="/jobs">
-            <Typography variant="h5">Job</Typography>
+            <Typography sx={{ paddingLeft: '20px' }} variant="h5">
+              Job
+            </Typography>
           </Link>
           {/* <Link to="/"> */}
           <span className="cursor-pointer relative flex">
@@ -170,6 +179,7 @@ const Navbar1 = () => {
           <Link to="/pension">
             <Typography variant="h5">Pension</Typography>
           </Link>
+          <FontSize />
           {/* </Link> */}
           {/* <Link to="/">
             <Typography variant="h5">Community</Typography>
@@ -181,6 +191,7 @@ const Navbar1 = () => {
               <LightMode sx={{ color: dark, fontSize: '25px' }} />
             )}
           </IconButton>
+          <Translate />
           {/* <Message sx={{ fontSize: '25px' }} />
           <Notifications sx={{ fontSize: '25px' }} />
           <Help sx={{ fontSize: '25px' }} /> */}
@@ -243,6 +254,7 @@ const Navbar1 = () => {
                 <LightMode sx={{ color: dark, fontSize: '25px' }} />
               )}
             </IconButton>
+
             {/* <Message sx={{ fontSize: '25px' }} /> */}
             {/* <Notifications sx={{ fontSize: '25px' }} /> */}
             {/* <Help sx={{ fontSize: '25px' }} /> */}

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Navbar1 from '../navbar/Navbar1';
-
+import img from '../TransitionPage/transition.svg';
 export const Transition = () => {
   const [step, setStep] = useState(1);
   const [value, setValue] = useState(1);
@@ -46,13 +46,7 @@ export const Transition = () => {
           </h3>
         </div>
         <div>
-          {/* <img
-            src={}
-            height="300px"
-            width="300px"
-            alt=""
-            style={{ marginLeft: '50px' }}
-          /> */}
+          <img src={img} height="300px" width="300px" alt="" style={{ marginLeft: '50px' }} />
         </div>
       </div>
       <div className="w-[90%] sm:w-[65%] mx-auto mt-14">
@@ -102,17 +96,13 @@ export const Transition = () => {
         {step == 1 && (
           <div className="text-lg mt-10 leading-relaxed" id="step1">
             <div className="text- tracking-widest">Job search:</div>
-            <div className="">
-              A significant aspect of transitioning from military to civilian life is finding a job. Veterans may have
-              access to job placement services and resources through government agencies or veteran service
-              organizations. It is important for the veteran to update their resume, network with potential employers
-              and prepare for job interviews.
-            </div>
-            <div className="">
-              Veterans have many skills and experiences that can be highly valuable in the civilian job market. However,
-              it may take time and effort to find the right job. They can network with other veterans, attend job fairs,
-              and work with recruiters or job placement services to increase their chances of finding a job that matches
-              their skills and interests.
+            <div>
+              <div className="">
+                A significant aspect of transitioning from military to civilian life is finding a job. Veterans may have
+                access to job placement services and resources through government agencies or veteran service
+                organizations. It is important for the veteran to update their resume, network with potential employers
+                and prepare for job interviews.
+              </div>
             </div>
           </div>
         )}
