@@ -24,6 +24,9 @@ import { Mhgames } from './scenes/games/Mhgames';
 import { Game1 } from './scenes/games/Game1';
 import { Game2 } from './scenes/games/game2/Game2';
 import axios from 'axios';
+import VideoCall from './scenes/VideoCall/VideoCall';
+import JoinRoom from './scenes/JoinMeet/JoinMeet';
+import Success from './components/Success';
 
 function App() {
   const mode = useSelector((state) => state.mode);
@@ -72,6 +75,13 @@ function App() {
             <Route path="/game1" element={<Game1 />} />
             <Route path="/game2" element={<Game2 />} />
             <Route path="/pension" element={<Pension />} />
+            {/* <Route path="/video-chat" element={<VideoCall />} /> */}
+
+            <Route path="/video-chat" element={<JoinRoom />} />
+            <Route path="/video/:id" element={<VideoCall />} />
+            <Route path="/jobs" element={<JobsPage />} />
+            <Route path="/success" element={<Success />} />
+            <Route path="/profile/:userId" element={isAuth ? <ProfilePage /> : <Navigate to="/" />} />
           </Routes>
         </ThemeProvider>
       </BrowserRouter>

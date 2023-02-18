@@ -30,7 +30,7 @@ export const createJob = async (req, res) => {
 /* READ */
 export const getJobs = async (req, res) => {
   try {
-    const blog = await Jobs.find();
+    const blog = await Job.find();
     res.status(200).json(blog);
   } catch (err) {
     res.status(404).json({ message: err.message });

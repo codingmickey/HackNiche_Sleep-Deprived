@@ -14,16 +14,16 @@ router.post('/email', async (req, res) => {
   const attachments = req.body.attachments;
 
   const emailUtil1 = await emailUtil.sendEmail({
-    email: 'meetp272003@gmail.com',
-    subject: 'Test',
-    html: 'Test',
+    email,
+    subject,
+    html,
     attachments: []
   });
   console.log(email);
   console.log(subject);
   console.log(html);
   console.log(attachments);
-  res.send('Email sent successfully');
+  res.send({ msg: 'Email sent successfully' });
 });
 
 router.post('/sms', async (req, res) => {
@@ -36,7 +36,7 @@ router.post('/sms', async (req, res) => {
   });
   console.log(to);
   console.log(body);
-  res.send('SMS sent successfully');
+  res.send({ msg: 'SMS sent successfully' });
 });
 
 export default router;
