@@ -24,6 +24,7 @@ import { Mhgames } from './scenes/games/Mhgames';
 import { Game1 } from './scenes/games/Game1';
 import { Game2 } from './scenes/games/game2/Game2';
 import axios from 'axios';
+import { CreateBlog } from './scenes/BlogPage/CreateBlog';
 
 function App() {
   const mode = useSelector((state) => state.mode);
@@ -63,6 +64,7 @@ function App() {
             <Route path="/explore" element={<Explore />} />
             <Route path="/employer" element={<Employer />} />
             <Route path="/blog" element={<Blog blog={res} />} />
+            <Route path="/blog-create" element={<CreateBlog />} />
             <Route path="/house-hunt" element={<House />} />
             <Route path="/transition" element={<Transition />} />
             <Route path="/mental-health" element={<Mental />} />
