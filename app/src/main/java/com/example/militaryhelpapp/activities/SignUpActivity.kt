@@ -49,7 +49,7 @@ class SignUpActivity : AppCompatActivity() {
                 binding.signUpNameLayout.requestFocus()
                 return@setOnClickListener
             }
-            if(binding.signUpAddressLayout.text!!.isEmpty()) {
+            if(binding.signUpAddressText.text!!.isEmpty()) {
                 binding.signUpAddressLayout.error = "Required*"
                 binding.signUpAddressLayout.requestFocus()
                 return@setOnClickListener
