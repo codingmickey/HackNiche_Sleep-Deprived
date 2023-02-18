@@ -35,22 +35,22 @@ function App() {
   const isAuth = Boolean(useSelector((state) => state.token));
   const [res, setRes] = React.useState();
 
-  useEffect(() => {
-    window.scroll({
-      top: 0,
-      left: 0,
-      behavior: 'smooth'
-    });
+  // useEffect(() => {
+  //   window.scroll({
+  //     top: 0,
+  //     left: 0,
+  //     behavior: 'smooth'
+  //   });
 
-    const f = async () => {
-      const response = await axios.get('http://localhost:3001/blogs');
-      if (response.status == 200) {
-        // console.log(response.data);
-        setRes(response);
-      }
-    };
-    f();
-  }, []);
+  //   const f = async () => {
+  //     const response = await axios.get('http://localhost:3001/blogs');
+  //     if (response.status == 200) {
+  //       // console.log(response.data);
+  //       setRes(response);
+  //     }
+  //   };
+  //   f();
+  // }, []);
 
   return (
     <div className="app">
@@ -78,7 +78,6 @@ function App() {
             <Route path="/game2" element={<Game2 />} />
             <Route path="/pension" element={<Pension />} />
             {/* <Route path="/video-chat" element={<VideoCall />} /> */}
-
             <Route path="/video-chat" element={<JoinRoom />} />
             <Route path="/video/:id" element={<VideoCall />} />
             <Route path="/jobs" element={<JobsPage />} />

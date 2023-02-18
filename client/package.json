@@ -27,6 +27,7 @@
     "react-i18next": "^12.1.5",
     "react-leaflet": "^4.2.0",
     "react-markdown": "^8.0.5",
+    "react-razorpay": "^1.2.0",
     "react-redux": "^8.0.4",
     "react-router-dom": "^6.4.2",
     "react-scripts": "5.0.1",
