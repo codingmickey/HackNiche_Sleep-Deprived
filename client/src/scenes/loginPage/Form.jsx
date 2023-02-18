@@ -83,7 +83,7 @@ const Form = () => {
           token: loggedIn.token
         })
       );
-      navigate('/home');
+      navigate('/explore');
     }
   };
 
@@ -165,7 +165,7 @@ const Form = () => {
                       >
                         <input {...getInputProps()} />
                         {!values.picture ? (
-                          <p>Add Picture Here</p>
+                          <p>Add Resume Here</p>
                         ) : (
                           <FlexBetween>
                             <Typography>{values.picture.name}</Typography>

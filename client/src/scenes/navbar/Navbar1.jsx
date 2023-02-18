@@ -34,6 +34,9 @@ import { Link, useNavigate } from 'react-router-dom';
 import FlexBetween from '../../components/FlexBetween';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
+
+import { FontSize } from '../FontSize';
+
 const Navbar1 = () => {
   const [support, setSupport] = useState(false);
   const [community, setCommunity] = useState(false);
@@ -185,7 +188,7 @@ const Navbar1 = () => {
               <LightMode sx={{ color: dark, fontSize: '25px' }} />
             )}
           </IconButton>
-          <Translate />
+          {/* <Translate /> */}
           {/* <Message sx={{ fontSize: '25px' }} />
           <Notifications sx={{ fontSize: '25px' }} />
           <Help sx={{ fontSize: '25px' }} /> */}
