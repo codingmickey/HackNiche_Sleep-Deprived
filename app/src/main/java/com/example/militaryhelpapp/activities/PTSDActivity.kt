@@ -1,8 +1,8 @@
 package com.example.militaryhelpapp.activities
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.militaryhelpapp.databinding.ActivityDrugAbuseBinding
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.example.militaryhelpapp.databinding.ActivityPtsdactivityBinding
 
 class PTSDActivity : AppCompatActivity() {
@@ -16,9 +16,14 @@ class PTSDActivity : AppCompatActivity() {
         setSupportActionBar(binding.toolbarPtsd)
         supportActionBar?.setHomeButtonEnabled(true)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        supportActionBar?.setDisplayShowTitleEnabled(false)
         binding.toolbarPtsd.setNavigationOnClickListener {
             finish()
+        }
+
+        binding.ptsdImageFlipperView.startFlipping()
+
+        binding.ptsdQuizButton.setOnClickListener {
+            Toast.makeText(this, "Directing to Quiz...", Toast.LENGTH_SHORT).show()
         }
     }
 }

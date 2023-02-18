@@ -18,7 +18,8 @@ class SupportFragment : Fragment() {
         SubViews(R.drawable.mental, "Mental Health"),
         SubViews(R.drawable.trauma, "PTSD"),
         SubViews(R.drawable.drug, "Drug Abuse"),
-        SubViews(R.drawable.donate, "Donation")
+        SubViews(R.drawable.donate, "Donation"),
+        SubViews(R.drawable.house_hunt, "House Hunt")
     )
 
     override fun onCreateView(

@@ -94,6 +94,7 @@
                 android:layout_marginTop="10dp">
 
                 <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/pension_qualifying_service_years_layout"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
@@ -114,6 +115,7 @@
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/pension_qualifying_service_months_layout"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"

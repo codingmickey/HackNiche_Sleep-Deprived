@@ -2,6 +2,8 @@ package com.example.militaryhelpapp.activities
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.bumptech.glide.Glide
+import com.example.militaryhelpapp.R
 import com.example.militaryhelpapp.databinding.ActivityMentalHealthBinding
 
 class MentalHealthActivity : AppCompatActivity() {
@@ -15,9 +17,12 @@ class MentalHealthActivity : AppCompatActivity() {
         setSupportActionBar(binding.toolbarMentalHealth)
         supportActionBar?.setHomeButtonEnabled(true)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        supportActionBar?.setDisplayShowTitleEnabled(false)
         binding.toolbarMentalHealth.setNavigationOnClickListener {
             finish()
         }
+
+        Glide.with(this)
+            .load(R.drawable.coming_soon)
+            .into(binding.mentalHealthImageView)
     }
 }

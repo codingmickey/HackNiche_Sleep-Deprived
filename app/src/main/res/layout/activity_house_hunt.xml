@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.MeetActivity">
+    tools:context=".activities.HouseHuntActivity">
 
     <com.google.android.material.appbar.AppBarLayout
-        android:id="@+id/appbar_meet"
+        android:id="@+id/appbar_house"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent"
@@ -17,24 +17,23 @@
         app:layout_constraintHorizontal_bias="0.5">
 
         <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar_meet"
+            android:id="@+id/toolbar_house"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             app:titleTextColor="@color/black"
-            app:title="Meet"/>
+            app:title="House Hunt"/>
 
     </com.google.android.material.appbar.AppBarLayout>
 
-    <ImageView
-        android:id="@+id/meet_image_view"
-        android:layout_width="wrap_content"
-        android:layout_height="200dp"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view_house"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/appbar_meet"
-        app:layout_constraintVertical_bias="0.5"
-        android:src="@drawable/coming_soon"/>
+        app:layout_constraintTop_toBottomOf="@id/appbar_house"
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

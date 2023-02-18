@@ -51,6 +51,18 @@ class PensionFragment : Fragment() {
         }
 
         binding.pensionCalculateButton.setOnClickListener {
+            if(binding.pensionQualifyingServiceYears.text!!.isEmpty()) {
+                binding.pensionQualifyingServiceYearsLayout.error = "Please enter this field"
+                binding.pensionQualifyingServiceYearsLayout.requestFocus()
+                return@setOnClickListener
+            }
+
+            if(binding.pensionEmoluments.text!!.isEmpty()) {
+                binding.pensionEmolumentsLayout.error = "Please enter this field"
+                binding.pensionEmolumentsLayout.requestFocus()
+                return@setOnClickListener
+            }
+
             val year = Integer.parseInt(binding.pensionQualifyingServiceYears.text.toString())
             val emolument = Integer.parseInt(binding.pensionEmoluments.text.toString())
 

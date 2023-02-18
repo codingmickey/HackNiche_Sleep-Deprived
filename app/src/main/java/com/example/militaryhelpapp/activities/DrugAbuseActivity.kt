@@ -2,6 +2,8 @@ package com.example.militaryhelpapp.activities
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.bumptech.glide.Glide
+import com.example.militaryhelpapp.R
 import com.example.militaryhelpapp.databinding.ActivityDrugAbuseBinding
 
 class DrugAbuseActivity : AppCompatActivity() {
@@ -15,9 +17,12 @@ class DrugAbuseActivity : AppCompatActivity() {
         setSupportActionBar(binding.toolbarDrugAbuse)
         supportActionBar?.setHomeButtonEnabled(true)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        supportActionBar?.setDisplayShowTitleEnabled(false)
         binding.toolbarDrugAbuse.setNavigationOnClickListener {
             finish()
         }
+
+        Glide.with(this)
+            .load(R.drawable.coming_soon)
+            .into(binding.drugAbuseImageView)
     }
 }

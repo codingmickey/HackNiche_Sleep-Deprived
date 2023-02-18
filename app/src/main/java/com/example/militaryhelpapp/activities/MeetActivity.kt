@@ -2,11 +2,12 @@ package com.example.militaryhelpapp.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.militaryhelpapp.databinding.ActivityDrugAbuseBinding
+import com.bumptech.glide.Glide
+import com.example.militaryhelpapp.R
 import com.example.militaryhelpapp.databinding.ActivityMeetBinding
 
 class MeetActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityMeetBinding
+    private lateinit var binding: com.example.militaryhelpapp.databinding.ActivityMeetBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -16,9 +17,12 @@ class MeetActivity : AppCompatActivity() {
         setSupportActionBar(binding.toolbarMeet)
         supportActionBar?.setHomeButtonEnabled(true)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        supportActionBar?.setDisplayShowTitleEnabled(false)
         binding.toolbarMeet.setNavigationOnClickListener {
             finish()
         }
+
+        Glide.with(this)
+            .load(R.drawable.coming_soon)
+            .into(binding.meetImageView)
     }
 }

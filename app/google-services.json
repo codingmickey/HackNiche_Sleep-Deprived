@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "51290762540",
+    "project_id": "ig-reels-vv",
+    "storage_bucket": "ig-reels-vv.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:51290762540:android:591d65c4125477e6b21089",
+        "android_client_info": {
+          "package_name": "com.example.militaryhelpapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "51290762540-jsqp5ihs9pmc25o5f3m7ivis6u5anbds.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.militaryhelpapp",
+            "certificate_hash": "690aa35cb8caa29a6f362d8ec293f84052453d57"
+          }
+        },
+        {
+          "client_id": "51290762540-p48t9g48a27enlo89m90ffe5jb2c08ar.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD0GfCIFq1U0d6HP5Y-H-W0dGa4HpnaVDI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "51290762540-p48t9g48a27enlo89m90ffe5jb2c08ar.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

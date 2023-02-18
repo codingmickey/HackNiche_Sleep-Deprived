@@ -30,6 +30,7 @@
         app:layout_constraintTop_toBottomOf="@id/appbar_job_details"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintVertical_bias="0.0"
         app:layout_constraintHorizontal_bias="0.5">
 
@@ -337,7 +338,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintVertical_bias="0.0"
-                android:hint="Salary"
+                android:text="Salary"
                 android:textSize="22sp"
                 android:textColor="@color/black"
                 android:textStyle="bold"/>

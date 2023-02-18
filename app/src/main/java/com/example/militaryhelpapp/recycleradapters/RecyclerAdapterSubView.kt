@@ -24,7 +24,6 @@ class RecyclerAdapterSubView(private var data: List<SubViews>) :
         with(holder) {
             with(data[position]) {
                 binding.cardName.text = this.text
-//                binding.subviewCard.background = ContextCompat.getDrawable(itemView.context, this.image)
 
                 Glide.with(itemView)
                     .load(this.image)
@@ -50,6 +49,14 @@ class RecyclerAdapterSubView(private var data: List<SubViews>) :
                         }
                         "Drug Abuse" -> {
                             val intent = Intent(itemView.context, DrugAbuseActivity::class.java)
+                            itemView.context.startActivity(intent)
+                        }
+                        "Donation" -> {
+                            val intent = Intent(itemView.context, DonationActivity::class.java)
+                            itemView.context.startActivity(intent)
+                        }
+                        "House Hunt" -> {
+                            val intent = Intent(itemView.context, HouseHuntActivity::class.java)
                             itemView.context.startActivity(intent)
                         }
                     }
