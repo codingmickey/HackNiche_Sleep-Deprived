@@ -31,6 +31,7 @@ export default function Video({ match }) {
           });`;
 
           document.body.appendChild(script);
+          document.body.querySelector('body').style.height = '100vh';
         }
       })
       .catch((err) => console.log(err));
