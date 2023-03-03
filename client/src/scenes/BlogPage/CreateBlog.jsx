@@ -12,6 +12,8 @@ export const CreateBlog = () => {
   const [value, setValue] = React.useState('**Hello world!!!**');
   const [title, setTitle] = React.useState('');
   const [des, setDes] = React.useState('');
+  const [docs, Docs] = React.useState('');
+  const [content, setContent] = React.useState('')
   const [blog, setBlog] = React.useState('i');
   const [tags, setTags] = React.useState('All');
 
@@ -30,9 +32,9 @@ export const CreateBlog = () => {
   return (
     <>
       <Navbar1 />
-      <div className="w-[75%] mx-auto mt-20">
-        <div className="container mt-20">
-          <div className="text-lg mb-5">Post your personalised blogs here</div>
+      <div className="w-[75%] mx-auto mt-3">
+        <div className="container">
+          <div className="text-xl mb-5 font-medium">Post your personalised blogs here</div>
           <div className="text-lg">Title:</div>
           <input
             type="text"
@@ -51,10 +53,28 @@ export const CreateBlog = () => {
             className="placeholder:text-[1.0rem] bg-grey border-[0.08rem] border-gray-300 outline-none py-[0.5rem] px-4 mt-2 w-full mb-4"
             placeholder="Enter description here"
           />
-          <MDEditor value={value} onChange={setValue} />
-          <MDEditor.Markdown source={value} style={{ whiteSpace: 'pre-wrap', height: '250px' }} />
+
+          <div className="text-lg">Content:</div>
+          <textarea
+            type="text"
+            name="des"
+            value={des}
+            rows='10'
+            onChange={(e) => setContent(e.target.value)}
+            className="placeholder:text-[1.0rem]  bg-grey border-[0.08rem] border-gray-300 outline-none py-[0.5rem] px-4 mt-2 w-full mb-4"
+            placeholder="Enter description here"
+          />
+              <input
+                type="file"
+                className="placeholder:text-[1.0rem] bg-gray-100 outline-none py-1 px-4 mt-2 w-full"
+                value={docs}
+                onChange={(e) => Docs(e.target.value)}
+              />
+          {/* </div> */}
+          {/* <MDEditor value={value} onChange={setValue} />
+          <MDEditor.Markdown source={value} style={{ whiteSpace: 'pre-wrap', height: '250px' }} /> */}
         </div>
-        <div className="mt-8 mb-4 flex justify-center">
+        <div className="mt-2 mb-4 flex justify-center">
           <div className="">
             <button
               className="px-5 py-1 bg-blue-500 text-white hover:bg-blue-400 text-lg rounded"

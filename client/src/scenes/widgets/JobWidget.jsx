@@ -86,7 +86,7 @@ const JobWidget = ({ post }) => {
       <Box color={main} display="flex" alignItems="start" gap="0.5rem" pb="1.1rem">
         <LocationOnIcon color={main} />
         <Typography color={main} variant="p" fontWeight="400">
-          {post.job.location ? post.job.location : '...'}
+          {post.job.city ? post.job.city : '...'}
         </Typography>
       </Box>
 
@@ -129,7 +129,7 @@ const JobWidget = ({ post }) => {
 
       <Stack direction="row" spacing={1}>
         <Chip label="Today" icon={<RestoreIcon />} size="small" color="success" />
-        <Chip label="Internship" size="small" />
+        <Chip label={post.job.type ? post.job.type : '...'} size="small" />
       </Stack>
 
       <Box display="flex" flexDirection="row-reverse">

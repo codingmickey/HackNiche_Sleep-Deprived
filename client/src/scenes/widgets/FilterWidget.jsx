@@ -15,7 +15,8 @@ import {
   FormGroup,
   FormControlLabel,
   Checkbox,
-  Slider
+  Slider,
+  Radio
 } from '@mui/material';
 import UserImage from '../../components/UserImage';
 import FlexBetween from '../../components/FlexBetween';
@@ -39,8 +40,9 @@ const FilterWidget = ({ userId }) => {
   const [jobsCategoryValue, setJobsCategoryValue] = useState(null);
   const [jobLocationValue, setJobLocationValue] = useState(null);
   const [workFromHome, setWorkFromHome] = useState(false);
-  const [partTime, setPartTime] = useState(false);
 
+  const [type, setType] = useState('All');
+  const [partTime, setPartTime] = useState(false);
   const getUser = async () => {
     const response = await fetch(`http://localhost:3001/users/${userId}`, {
       method: 'GET',
@@ -102,7 +104,7 @@ const FilterWidget = ({ userId }) => {
         </Typography>
       </Box>
       <Box p="1rem 0">
-        <Box display="flex" alignItems="center" justifyContent="center" gap="1rem" mb="1.7rem">
+        {/* <Box display="flex" alignItems="center" justifyContent="center" gap="1rem" mb="1.7rem">
           <Autocomplete
             disablePortal
             id="jobs-category"
@@ -114,7 +116,7 @@ const FilterWidget = ({ userId }) => {
             sx={{ width: 300 }}
             renderInput={(params) => <TextField {...params} label="Category" />}
           />
-        </Box>
+        </Box> */}
 
         <Box display="flex" alignItems="center" justifyContent="center" gap="1rem" mb="1rem">
           <Autocomplete
@@ -133,12 +135,28 @@ const FilterWidget = ({ userId }) => {
         <Box p="0 1.5rem 1rem">
           <FormGroup justifyContent="center">
             <FormControlLabel
-              control={<Checkbox checked={workFromHome} onChange={(e) => setWorkFromHome(e.target.checked)} />}
-              label="Work from home"
+              control={
+                <Radio
+                  checked={type==='Intership'||type==='All'?true:false}
+                  onChange={(e) => {
+                    setPartTime(e.target.checked);
+                    localStorage.setItem('type', e.target.value);
+                  }}
+                />
+              }
+              label="Intership"
             />
             <FormControlLabel
-              control={<Checkbox checked={partTime} onChange={(e) => setPartTime(e.target.checked)} />}
-              label="Part time"
+              control={
+                <Radio
+                  checked={!partTime}
+                  onChange={(e) => {
+                    setPartTime(!e.target.checked);
+                    localStorage.setItem('type', e.target.value);
+                  }}
+                />
+              }
+              label="Job"
             />
           </FormGroup>
         </Box>
@@ -166,7 +184,12 @@ const FilterWidget = ({ userId }) => {
             <KeyboardArrowDownIcon color="primary" />
           </Box>
         </Box>
-          <div className='text-center mt-4'>Become a Employer <Link to='/employer'><span className='font-medium underline underline-offset-[0.05rem]'>link</span></Link></div>
+        <div className="text-center mt-4">
+          Become a Employer{' '}
+          <Link to="/employer">
+            <span className="font-medium underline underline-offset-[0.05rem]">link</span>
+          </Link>
+        </div>
 
         {/*  
 
